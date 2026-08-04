@@ -1,0 +1,41 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\16、发明2019107150619-一种装配式钢结构节点和装配式钢结构柱-发明专利证书(签章).pdf",
+  "sample_index": 16,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7766522",
+  "title": "一种装配式钢结构节点和装配式钢结构柱",
+  "patent_no_raw": "ZL 2019 1 0715061.9",
+  "patent_no": "ZL201910715061.9",
+  "publication_no": "CN110453781B",
+  "application_date": "2019-08-02",
+  "grant_publication_date": "2025-02-28",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "石鑫",
+    "丁圣潇",
+    "赵迎九",
+    "李晟"
+  ],
+  "application_date_inventors": [
+    "石鑫",
+    "丁圣潇",
+    "赵迎九",
+    "李晟"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "石鑫;丁圣潇;赵迎九;李晟"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

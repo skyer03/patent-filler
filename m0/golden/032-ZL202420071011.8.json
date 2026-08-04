@@ -1,0 +1,55 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\32、2024200710118 一种水下桩桩顶标高测量装置.pdf",
+  "sample_index": 32,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22486359",
+  "title": "一种水下桩桩顶标高测量装置",
+  "patent_no_raw": "ZL 2024 2 0071011.8",
+  "patent_no": "ZL202420071011.8",
+  "publication_no": "CN222505395U",
+  "application_date": "2024-01-11",
+  "grant_publication_date": "2025-02-18",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "茹洋洋",
+    "牛文献",
+    "王小合",
+    "张清涛",
+    "赵辉",
+    "郭玮",
+    "王怀明",
+    "刘仁泉",
+    "罗玉涛",
+    "洪泽"
+  ],
+  "application_date_inventors": [
+    "茹洋洋",
+    "牛文献",
+    "王小合",
+    "张清涛",
+    "赵辉",
+    "郭玮",
+    "王怀明",
+    "刘仁泉",
+    "罗玉涛",
+    "洪泽"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "茹洋洋;牛文献;王小合;张清涛;赵辉;郭玮;王怀明;刘仁泉\n罗玉涛;洪泽"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

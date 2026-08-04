@@ -1,0 +1,47 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\27、202420383103X-冷却塔-实用新型专利证书(签章).pdf",
+  "sample_index": 27,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22534697",
+  "title": "冷却塔",
+  "patent_no_raw": "ZL 2024 2 0383103.X",
+  "patent_no": "ZL202420383103.X",
+  "publication_no": "CN222558222U",
+  "application_date": "2024-02-28",
+  "grant_publication_date": "2025-03-04",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "苏海丽",
+    "侯亚委",
+    "石鑫",
+    "刘学武",
+    "王壬峰",
+    "张华松",
+    "陈有志"
+  ],
+  "application_date_inventors": [
+    "苏海丽",
+    "侯亚委",
+    "石鑫",
+    "刘学武",
+    "王壬峰",
+    "张华松",
+    "陈有志"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "苏海丽;侯亚委;石鑫;刘学武;王壬峰;张华松;陈有志"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

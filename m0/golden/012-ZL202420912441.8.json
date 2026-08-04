@@ -1,0 +1,45 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\12、2024209124418-支架连接节点及光伏支架-实用新型专利证书(签章).pdf",
+  "sample_index": 12,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22454062",
+  "title": "支架连接节点及光伏支架",
+  "patent_no_raw": "ZL 2024 2 0912441.8",
+  "patent_no": "ZL202420912441.8",
+  "publication_no": "CN222484610U",
+  "application_date": "2024-04-28",
+  "grant_publication_date": "2025-02-14",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "张丹",
+    "石鑫",
+    "侯亚委",
+    "张华松",
+    "陈有志",
+    "李博"
+  ],
+  "application_date_inventors": [
+    "张丹",
+    "石鑫",
+    "侯亚委",
+    "张华松",
+    "陈有志",
+    "李博"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "张丹;石鑫;侯亚委;张华松;陈有志;李博"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

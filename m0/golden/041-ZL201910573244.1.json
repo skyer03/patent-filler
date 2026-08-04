@@ -1,0 +1,57 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\41、2019105732441-一种毂式节点网架和管桁架的插板连接结构的安装方法-发明专利证书(签章).pdf",
+  "sample_index": 41,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7830357",
+  "title": "一种毂式节点网架和管桁架的插板连接结构的安装方法",
+  "patent_no_raw": "ZL 2019 1 0573244.1",
+  "patent_no": "ZL201910573244.1",
+  "publication_no": "CN110273475B",
+  "application_date": "2019-06-27",
+  "grant_publication_date": "2025-03-25",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "李博",
+    "刘学武",
+    "侯亚委",
+    "赵志伟",
+    "赵迎九",
+    "李庆建",
+    "陈有志",
+    "牛防桥",
+    "苏海丽",
+    "史丙成",
+    "张丹"
+  ],
+  "application_date_inventors": [
+    "李博",
+    "刘学武",
+    "侯亚委",
+    "赵志伟",
+    "赵迎九",
+    "李庆建",
+    "陈有志",
+    "牛防桥",
+    "苏海丽",
+    "史丙成",
+    "张丹"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "李博;刘学武;侯亚委;赵志伟;赵迎九;李庆建;陈有志\n牛防桥;苏海丽;史丙成;张丹"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

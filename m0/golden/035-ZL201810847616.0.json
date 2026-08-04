@@ -1,0 +1,43 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\35、发明2018108476160一种汽轮机高背压供热发电联产系统.PDF",
+  "sample_index": 35,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7823806",
+  "title": "一种汽轮机高背压供热发电联产系统",
+  "patent_no_raw": "ZL 2018 1 0847616.0",
+  "patent_no": "ZL201810847616.0",
+  "publication_no": "CN109578096B",
+  "application_date": "2018-07-27",
+  "grant_publication_date": "2025-03-25",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "刘学",
+    "李国栋",
+    "张永锴",
+    "闫永晖",
+    "杨晓巳"
+  ],
+  "application_date_inventors": [
+    "刘学",
+    "李国栋",
+    "张永锴",
+    "闫永晖",
+    "杨晓巳"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "刘学;李国栋;张永锴;闫永晖;杨晓巳"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

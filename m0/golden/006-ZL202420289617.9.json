@@ -1,0 +1,41 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\6、2024202896179一种低振动抽水蓄能电站地下厂房.pdf",
+  "sample_index": 6,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22414559",
+  "title": "一种低振动抽水蓄能电站地下厂房",
+  "patent_no_raw": "ZL 2024 2 0289617.9",
+  "patent_no": "ZL202420289617.9",
+  "publication_no": "CN222436011U",
+  "application_date": "2024-02-08",
+  "grant_publication_date": "2025-02-07",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "马骁",
+    "赵迎九",
+    "刘晓东",
+    "柴少泰"
+  ],
+  "application_date_inventors": [
+    "马骁",
+    "赵迎九",
+    "刘晓东",
+    "柴少泰"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "马骁;赵迎九;刘晓东;柴少泰"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

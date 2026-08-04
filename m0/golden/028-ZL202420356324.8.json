@@ -1,0 +1,53 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\28、2024203563248-料仓钢桁架结构-实用新型专利证书(签章).pdf",
+  "sample_index": 28,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22547737",
+  "title": "料仓钢桁架结构",
+  "patent_no_raw": "ZL 2024 2 0356324.8",
+  "patent_no": "ZL202420356324.8",
+  "publication_no": "CN222557831U",
+  "application_date": "2024-02-26",
+  "grant_publication_date": "2025-03-04",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "苏海丽",
+    "赵迎九",
+    "刘学武",
+    "肖克勤",
+    "侯亚委",
+    "石鑫",
+    "肖强",
+    "张华松",
+    "陈有志"
+  ],
+  "application_date_inventors": [
+    "苏海丽",
+    "赵迎九",
+    "刘学武",
+    "肖克勤",
+    "侯亚委",
+    "石鑫",
+    "肖强",
+    "张华松",
+    "陈有志"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "苏海丽;赵迎九;刘学武;肖克勤;侯亚委;石鑫;肖强;张华松\n陈有志"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

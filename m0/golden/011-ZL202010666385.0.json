@@ -1,0 +1,53 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\11、2020106663850-一种带辅助桩的套筒式水下沉桩定位架装置及施工方法-发明专利证书(签章).pdf",
+  "sample_index": 11,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7728608",
+  "title": "一种带辅助桩的套筒式水下沉桩定位架装置及施工方法",
+  "patent_no_raw": "ZL 2020 1 0666385.0",
+  "patent_no": "ZL202010666385.0",
+  "publication_no": "CN111794233B",
+  "application_date": "2020-07-10",
+  "grant_publication_date": "2025-02-14",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "张清涛",
+    "刘玉飞",
+    "胡春雁",
+    "逯鹏",
+    "茹洋洋",
+    "鲁成林",
+    "赵辉",
+    "贺广零",
+    "郭小亮"
+  ],
+  "application_date_inventors": [
+    "张清涛",
+    "刘玉飞",
+    "胡春雁",
+    "逯鹏",
+    "茹洋洋",
+    "鲁成林",
+    "赵辉",
+    "贺广零",
+    "郭小亮"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "张清涛;刘玉飞;胡春雁;逯鹏;茹洋洋;鲁成林;赵辉;贺广零\n郭小亮"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

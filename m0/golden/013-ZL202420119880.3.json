@@ -1,0 +1,49 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\13、2024201198803-一种山地柔性光伏支架-实用新型专利证书(签章).pdf",
+  "sample_index": 13,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22492732",
+  "title": "一种山地柔性光伏支架",
+  "patent_no_raw": "ZL 2024 2 0119880.3",
+  "patent_no": "ZL202420119880.3",
+  "publication_no": "CN222509179U",
+  "application_date": "2024-01-17",
+  "grant_publication_date": "2025-02-18",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "葛圳东",
+    "赵光明",
+    "耿海强",
+    "唐小锋",
+    "刘开辉",
+    "张新春",
+    "李杰",
+    "李萌"
+  ],
+  "application_date_inventors": [
+    "葛圳东",
+    "赵光明",
+    "耿海强",
+    "唐小锋",
+    "刘开辉",
+    "张新春",
+    "李杰",
+    "李萌"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "葛圳东;赵光明;耿海强;唐小锋;刘开辉;张新春;李杰;李萌"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

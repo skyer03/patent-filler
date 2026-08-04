@@ -1,0 +1,2579 @@
+[
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\1、发明2020104300960 一种海上风机基础、拖航及安装方法.PDF",
+    "sample_index": 1,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7668232",
+    "title": "一种海上风机基础、拖航及安装方法",
+    "patent_no_raw": "ZL 2020 1 0430096.0",
+    "patent_no": "ZL202010430096.0",
+    "publication_no": "CN111472379B",
+    "application_date": "2020-05-20",
+    "grant_publication_date": "2025-01-14",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张健翔",
+      "张星波",
+      "王小合",
+      "郭小亮",
+      "崔文涛",
+      "贺广零",
+      "闵巧玲",
+      "赵玉琢",
+      "鲁成林",
+      "袁新勇"
+    ],
+    "application_date_inventors": [
+      "张健翔",
+      "张星波",
+      "王小合",
+      "郭小亮",
+      "崔文涛",
+      "贺广零",
+      "闵巧玲",
+      "赵玉琢",
+      "鲁成林",
+      "袁新勇"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张健翔;张星波;王小合;郭小亮;崔文涛;贺广零;闵巧玲\n赵玉琢;鲁成林;袁新勇"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\2、2023229875932一种水库防冰盖输水管道装置.pdf",
+    "sample_index": 2,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "21727118",
+    "title": "一种水库防冰盖输水管道装置",
+    "patent_no_raw": "ZL 2023 2 2987593.2",
+    "patent_no": "ZL202322987593.2",
+    "publication_no": "CN221741187U",
+    "application_date": "2023-11-06",
+    "grant_publication_date": "2024-09-20",
+    "current_patentees": [
+      "华电重工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "马骁",
+      "刘晓东",
+      "赵迎九",
+      "柴少泰"
+    ],
+    "application_date_inventors": [
+      "马骁",
+      "刘晓东",
+      "赵迎九",
+      "柴少泰"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电重工股份有限公司",
+      "inventors_raw": "马骁;刘晓东;赵迎九;柴少泰"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\3、2021114247813一种N型连续折叠式落水消声装置.pdf",
+    "sample_index": 3,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7599662",
+    "title": "一种N型连续折叠式落水消声装置",
+    "patent_no_raw": "ZL 2021 1 1424781.3",
+    "patent_no": "ZL202111424781.3",
+    "publication_no": "CN114294973B",
+    "application_date": "2021-11-26",
+    "grant_publication_date": "2024-12-13",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "钟振茂",
+      "赵迎九",
+      "石鑫",
+      "魏普",
+      "李庆建",
+      "江腾武",
+      "于雅楠",
+      "任玉凤",
+      "牛丛涵"
+    ],
+    "application_date_inventors": [
+      "钟振茂",
+      "赵迎九",
+      "石鑫",
+      "魏普",
+      "李庆建",
+      "江腾武",
+      "于雅楠",
+      "任玉凤",
+      "牛丛涵"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "钟振茂;赵迎九;石鑫;魏普;李庆建;江腾武;于雅楠;任玉凤\n牛丛涵"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\4、2024202896164一种隧洞高效施工装备.pdf",
+    "sample_index": 4,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22084886",
+    "title": "一种隧洞高效施工装备",
+    "patent_no_raw": "ZL 2024 2 0289616.4",
+    "patent_no": "ZL202420289616.4",
+    "publication_no": "CN222102036U",
+    "application_date": "2024-02-08",
+    "grant_publication_date": "2024-12-03",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "马骁",
+      "刘晓东",
+      "赵迎九",
+      "柴少泰"
+    ],
+    "application_date_inventors": [
+      "马骁",
+      "刘晓东",
+      "赵迎九",
+      "柴少泰"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "马骁;刘晓东;赵迎九;柴少泰"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\5、2024200710086一种新型直流海缆.pdf",
+    "sample_index": 5,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22427005",
+    "title": "一种新型直流海缆",
+    "patent_no_raw": "ZL 2024 2 0071008.6",
+    "patent_no": "ZL202420071008.6",
+    "publication_no": "CN222440224U",
+    "application_date": "2024-01-11",
+    "grant_publication_date": "2025-02-07",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "芮守娟",
+      "袁新勇",
+      "张清涛",
+      "王峰",
+      "王小合",
+      "赵书华",
+      "陈冲",
+      "田利勇",
+      "周志强"
+    ],
+    "application_date_inventors": [
+      "芮守娟",
+      "袁新勇",
+      "张清涛",
+      "王峰",
+      "王小合",
+      "赵书华",
+      "陈冲",
+      "田利勇",
+      "周志强"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "芮守娟;袁新勇;张清涛;王峰;王小合;赵书华;陈冲;田利勇\n周志强"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\6、2024202896179一种低振动抽水蓄能电站地下厂房.pdf",
+    "sample_index": 6,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22414559",
+    "title": "一种低振动抽水蓄能电站地下厂房",
+    "patent_no_raw": "ZL 2024 2 0289617.9",
+    "patent_no": "ZL202420289617.9",
+    "publication_no": "CN222436011U",
+    "application_date": "2024-02-08",
+    "grant_publication_date": "2025-02-07",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "马骁",
+      "赵迎九",
+      "刘晓东",
+      "柴少泰"
+    ],
+    "application_date_inventors": [
+      "马骁",
+      "赵迎九",
+      "刘晓东",
+      "柴少泰"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "马骁;赵迎九;刘晓东;柴少泰"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\7、2024206090655一种抽水蓄能电站水轮机进水排气装置.pdf",
+    "sample_index": 7,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22411851",
+    "title": "一种抽水蓄能电站水轮机进水排气装置",
+    "patent_no_raw": "ZL 2024 2 0609065.5",
+    "patent_no": "ZL202420609065.5",
+    "publication_no": "CN222436501U",
+    "application_date": "2024-03-27",
+    "grant_publication_date": "2025-02-07",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "马骁",
+      "刘晓东",
+      "赵迎九",
+      "柴少泰"
+    ],
+    "application_date_inventors": [
+      "马骁",
+      "刘晓东",
+      "赵迎九",
+      "柴少泰"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "马骁;刘晓东;赵迎九;柴少泰"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\8、2024206380732一种金属陶瓷粉末面层材料研发用检测装置.pdf",
+    "sample_index": 8,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22411100",
+    "title": "一种金属陶瓷粉末面层材料研发用检测装置",
+    "patent_no_raw": "ZL 2024 2 0638073.2",
+    "patent_no": "ZL202420638073.2",
+    "publication_no": "CN222439428U",
+    "application_date": "2024-03-29",
+    "grant_publication_date": "2025-02-07",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "任嘉庆",
+      "张淼",
+      "刘学",
+      "杨晓巳"
+    ],
+    "application_date_inventors": [
+      "任嘉庆",
+      "张淼",
+      "刘学",
+      "杨晓巳"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "任嘉庆;张淼;刘学;杨晓巳"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\9、2023231165768-一种轨道车和吊装设备-实用新型专利证书(签章).pdf",
+    "sample_index": 9,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22414291",
+    "title": "一种轨道车和吊装设备",
+    "patent_no_raw": "ZL 2023 2 3116576.8",
+    "patent_no": "ZL202323116576.8",
+    "publication_no": "CN222433944U",
+    "application_date": "2023-11-17",
+    "grant_publication_date": "2025-02-07",
+    "current_patentees": [
+      "华电科工股份有限公司",
+      "厦门力昌机械有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司",
+      "厦门力昌机械有限公司"
+    ],
+    "inventors": [
+      "鲁成林",
+      "逯鹏",
+      "李章模",
+      "卢士兵",
+      "马春龙",
+      "张健翔",
+      "卢国杰",
+      "李世飞",
+      "余刚",
+      "王怀明",
+      "王义维",
+      "王宗尧",
+      "田利勇",
+      "胡春雁"
+    ],
+    "application_date_inventors": [
+      "鲁成林",
+      "逯鹏",
+      "李章模",
+      "卢士兵",
+      "马春龙",
+      "张健翔",
+      "卢国杰",
+      "李世飞",
+      "余刚",
+      "王怀明",
+      "王义维",
+      "王宗尧",
+      "田利勇",
+      "胡春雁"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司;厦门力昌机械有限公司",
+      "inventors_raw": "鲁成林;逯鹏;李章模;卢士兵;马春龙;张健翔;卢国杰\n李世飞;余刚;王怀明;王义维;王宗尧;田利勇;胡春雁"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed",
+        "joint_current_patentees",
+        "joint_application_date_applicants"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\10、2024201390545-一种垃圾填埋场柔性光伏支架及安装基础-实用新型专利证书(签章).pdf",
+    "sample_index": 10,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22463313",
+    "title": "一种垃圾填埋场柔性光伏支架及安装基础",
+    "patent_no_raw": "ZL 2024 2 0139054.5",
+    "patent_no": "ZL202420139054.5",
+    "publication_no": "CN222484600U",
+    "application_date": "2024-01-19",
+    "grant_publication_date": "2025-02-14",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "赵光明",
+      "石鑫",
+      "葛圳东",
+      "廖鹏展",
+      "耿海强",
+      "李杰",
+      "张新春",
+      "雷茜"
+    ],
+    "application_date_inventors": [
+      "赵光明",
+      "石鑫",
+      "葛圳东",
+      "廖鹏展",
+      "耿海强",
+      "李杰",
+      "张新春",
+      "雷茜"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "赵光明;石鑫;葛圳东;廖鹏展;耿海强;李杰;张新春;雷茜"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\11、2020106663850-一种带辅助桩的套筒式水下沉桩定位架装置及施工方法-发明专利证书(签章).pdf",
+    "sample_index": 11,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7728608",
+    "title": "一种带辅助桩的套筒式水下沉桩定位架装置及施工方法",
+    "patent_no_raw": "ZL 2020 1 0666385.0",
+    "patent_no": "ZL202010666385.0",
+    "publication_no": "CN111794233B",
+    "application_date": "2020-07-10",
+    "grant_publication_date": "2025-02-14",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张清涛",
+      "刘玉飞",
+      "胡春雁",
+      "逯鹏",
+      "茹洋洋",
+      "鲁成林",
+      "赵辉",
+      "贺广零",
+      "郭小亮"
+    ],
+    "application_date_inventors": [
+      "张清涛",
+      "刘玉飞",
+      "胡春雁",
+      "逯鹏",
+      "茹洋洋",
+      "鲁成林",
+      "赵辉",
+      "贺广零",
+      "郭小亮"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张清涛;刘玉飞;胡春雁;逯鹏;茹洋洋;鲁成林;赵辉;贺广零\n郭小亮"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\12、2024209124418-支架连接节点及光伏支架-实用新型专利证书(签章).pdf",
+    "sample_index": 12,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22454062",
+    "title": "支架连接节点及光伏支架",
+    "patent_no_raw": "ZL 2024 2 0912441.8",
+    "patent_no": "ZL202420912441.8",
+    "publication_no": "CN222484610U",
+    "application_date": "2024-04-28",
+    "grant_publication_date": "2025-02-14",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张丹",
+      "石鑫",
+      "侯亚委",
+      "张华松",
+      "陈有志",
+      "李博"
+    ],
+    "application_date_inventors": [
+      "张丹",
+      "石鑫",
+      "侯亚委",
+      "张华松",
+      "陈有志",
+      "李博"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张丹;石鑫;侯亚委;张华松;陈有志;李博"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\13、2024201198803-一种山地柔性光伏支架-实用新型专利证书(签章).pdf",
+    "sample_index": 13,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22492732",
+    "title": "一种山地柔性光伏支架",
+    "patent_no_raw": "ZL 2024 2 0119880.3",
+    "patent_no": "ZL202420119880.3",
+    "publication_no": "CN222509179U",
+    "application_date": "2024-01-17",
+    "grant_publication_date": "2025-02-18",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "葛圳东",
+      "赵光明",
+      "耿海强",
+      "唐小锋",
+      "刘开辉",
+      "张新春",
+      "李杰",
+      "李萌"
+    ],
+    "application_date_inventors": [
+      "葛圳东",
+      "赵光明",
+      "耿海强",
+      "唐小锋",
+      "刘开辉",
+      "张新春",
+      "李杰",
+      "李萌"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "葛圳东;赵光明;耿海强;唐小锋;刘开辉;张新春;李杰;李萌"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\14、2024209875169-柔性光伏支架抗风稳定装置、柔性光伏支架及光伏系统-实用新型专利证书(签章).pdf",
+    "sample_index": 14,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22489575",
+    "title": "柔性光伏支架抗风稳定装置、柔性光伏支架及光伏系统",
+    "patent_no_raw": "ZL 2024 2 0987516.9",
+    "patent_no": "ZL202420987516.9",
+    "publication_no": "CN222509194U",
+    "application_date": "2024-05-08",
+    "grant_publication_date": "2025-02-18",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "孟潮",
+      "赵光明",
+      "石鑫",
+      "丁圣潇",
+      "王琼琼",
+      "葛圳东",
+      "王倩倩",
+      "张晓生"
+    ],
+    "application_date_inventors": [
+      "孟潮",
+      "赵光明",
+      "石鑫",
+      "丁圣潇",
+      "王琼琼",
+      "葛圳东",
+      "王倩倩",
+      "张晓生"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "孟潮;赵光明;石鑫;丁圣潇;王琼琼;葛圳东;王倩倩;张晓生"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\15、发明2020104421594-一种消声片-发明专利证书(签章).pdf",
+    "sample_index": 15,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7762589",
+    "title": "一种消声片",
+    "patent_no_raw": "ZL 2020 1 0442159.4",
+    "patent_no": "ZL202010442159.4",
+    "publication_no": "CN111489727B",
+    "application_date": "2020-05-22",
+    "grant_publication_date": "2025-02-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "钟振茂",
+      "黄立锡",
+      "赵迎九",
+      "张洪军",
+      "李庆建",
+      "魏普",
+      "汪光辉",
+      "任玉凤",
+      "于雅楠",
+      "江腾武",
+      "郭江海",
+      "邱兆国"
+    ],
+    "application_date_inventors": [
+      "钟振茂",
+      "黄立锡",
+      "赵迎九",
+      "张洪军",
+      "李庆建",
+      "魏普",
+      "汪光辉",
+      "任玉凤",
+      "于雅楠",
+      "江腾武",
+      "郭江海",
+      "邱兆国"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "钟振茂;黄立锡;赵迎九;张洪军;李庆建;魏普;汪光辉\n任玉凤;于雅楠;江腾武;郭江海;邱兆国"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\16、发明2019107150619-一种装配式钢结构节点和装配式钢结构柱-发明专利证书(签章).pdf",
+    "sample_index": 16,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7766522",
+    "title": "一种装配式钢结构节点和装配式钢结构柱",
+    "patent_no_raw": "ZL 2019 1 0715061.9",
+    "patent_no": "ZL201910715061.9",
+    "publication_no": "CN110453781B",
+    "application_date": "2019-08-02",
+    "grant_publication_date": "2025-02-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "石鑫",
+      "丁圣潇",
+      "赵迎九",
+      "李晟"
+    ],
+    "application_date_inventors": [
+      "石鑫",
+      "丁圣潇",
+      "赵迎九",
+      "李晟"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "石鑫;丁圣潇;赵迎九;李晟"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\17、发明2020106665610-一种舱底结构及坐底驳船-发明专利证书(签章).pdf",
+    "sample_index": 17,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7767611",
+    "title": "一种舱底结构及坐底驳船",
+    "patent_no_raw": "ZL 2020 1 0666561.0",
+    "patent_no": "ZL202010666561.0",
+    "publication_no": "CN111776134B",
+    "application_date": "2020-07-10",
+    "grant_publication_date": "2025-02-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张健翔",
+      "贺广零",
+      "任宪刚",
+      "王怀明",
+      "陈建征",
+      "王宗尧",
+      "杜洪岩",
+      "赵辉",
+      "罗玉涛"
+    ],
+    "application_date_inventors": [
+      "张健翔",
+      "贺广零",
+      "任宪刚",
+      "王怀明",
+      "陈建征",
+      "王宗尧",
+      "杜洪岩",
+      "赵辉",
+      "罗玉涛"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张健翔;贺广零;任宪刚;王怀明;陈建征;王宗尧;杜洪岩\n赵辉;罗玉涛"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\18、2024211590209-升压站转运工装-实用新型专利证书(签章).pdf",
+    "sample_index": 18,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22527569",
+    "title": "升压站转运工装",
+    "patent_no_raw": "ZL 2024 2 1159020.9",
+    "patent_no": "ZL202421159020.9",
+    "publication_no": "CN222539921U",
+    "application_date": "2024-05-24",
+    "grant_publication_date": "2025-02-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张启光",
+      "马春龙",
+      "田利勇",
+      "仲苏州",
+      "袁霄",
+      "薄克斌",
+      "李合杰",
+      "高原",
+      "王晓惠",
+      "陈冲"
+    ],
+    "application_date_inventors": [
+      "张启光",
+      "马春龙",
+      "田利勇",
+      "仲苏州",
+      "袁霄",
+      "薄克斌",
+      "李合杰",
+      "高原",
+      "王晓惠",
+      "陈冲"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张启光;马春龙;田利勇;仲苏州;袁霄;薄克斌;李合杰;高原\n王晓惠;陈冲"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\19、发明2020104421541-一种片式消声器-发明专利证书(签章).pdf",
+    "sample_index": 19,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7769687",
+    "title": "一种片式消声器",
+    "patent_no_raw": "ZL 2020 1 0442154.1",
+    "patent_no": "ZL202010442154.1",
+    "publication_no": "CN111477205B",
+    "application_date": "2020-05-22",
+    "grant_publication_date": "2025-02-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "钟振茂",
+      "黄立锡",
+      "赵迎九",
+      "张洪军",
+      "李庆建",
+      "魏普",
+      "汪光辉",
+      "任玉凤",
+      "于雅楠",
+      "江腾武",
+      "郭江海",
+      "邱兆国"
+    ],
+    "application_date_inventors": [
+      "钟振茂",
+      "黄立锡",
+      "赵迎九",
+      "张洪军",
+      "李庆建",
+      "魏普",
+      "汪光辉",
+      "任玉凤",
+      "于雅楠",
+      "江腾武",
+      "郭江海",
+      "邱兆国"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "钟振茂;黄立锡;赵迎九;张洪军;李庆建;魏普;汪光辉\n任玉凤;于雅楠;江腾武;郭江海;邱兆国"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\20、发明202011644446X-一种钢结构冷却塔围护结构.pdf",
+    "sample_index": 20,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7769952",
+    "title": "一种钢结构冷却塔围护结构",
+    "patent_no_raw": "ZL 2020 1 1644446.X",
+    "patent_no": "ZL202011644446.X",
+    "publication_no": "CN112727175B",
+    "application_date": "2020-12-31",
+    "grant_publication_date": "2025-02-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "侯亚委",
+      "刘学武",
+      "王二峰",
+      "李庆建",
+      "李博",
+      "崔禹婷",
+      "陈有志",
+      "苏海丽",
+      "赵志伟",
+      "史丙成",
+      "张丹",
+      "马凯彬"
+    ],
+    "application_date_inventors": [
+      "侯亚委",
+      "刘学武",
+      "王二峰",
+      "李庆建",
+      "李博",
+      "崔禹婷",
+      "陈有志",
+      "苏海丽",
+      "赵志伟",
+      "史丙成",
+      "张丹",
+      "马凯彬"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "侯亚委;刘学武;王二峰;李庆建;李博;崔禹婷;陈有志\n苏海丽;赵志伟;史丙成;张丹;马凯彬"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\21、2024205503326-连接结构及和海上光伏支撑装置-实用新型专利证书(签章).pdf",
+    "sample_index": 21,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22543204",
+    "title": "连接结构及和海上光伏支撑装置",
+    "patent_no_raw": "ZL 2024 2 0550332.6",
+    "patent_no": "ZL202420550332.6",
+    "publication_no": "CN222557678U",
+    "application_date": "2024-03-20",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "郭小亮",
+      "逯鹏",
+      "李佳楠",
+      "陈冲",
+      "董宏季",
+      "鲁成林",
+      "崔文涛",
+      "余刚",
+      "王怀明",
+      "裴立勤",
+      "程建锋"
+    ],
+    "application_date_inventors": [
+      "郭小亮",
+      "逯鹏",
+      "李佳楠",
+      "陈冲",
+      "董宏季",
+      "鲁成林",
+      "崔文涛",
+      "余刚",
+      "王怀明",
+      "裴立勤",
+      "程建锋"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "郭小亮;逯鹏;李佳楠;陈冲;董宏季;鲁成林;崔文涛;余刚\n王怀明;裴立勤;程建锋"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\22、2024202529396-光伏支架及光伏系统-实用新型专利证书(签章).pdf",
+    "sample_index": 22,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22538083",
+    "title": "光伏支架及光伏系统",
+    "patent_no_raw": "ZL 2024 2 0252939.6",
+    "patent_no": "ZL202420252939.6",
+    "publication_no": "CN222563748U",
+    "application_date": "2024-02-01",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "赵光明",
+      "石鑫",
+      "丁圣潇",
+      "葛圳东",
+      "郭宏观",
+      "李杰",
+      "张新春",
+      "张晓生"
+    ],
+    "application_date_inventors": [
+      "赵光明",
+      "石鑫",
+      "丁圣潇",
+      "葛圳东",
+      "郭宏观",
+      "李杰",
+      "张新春",
+      "张晓生"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "赵光明;石鑫;丁圣潇;葛圳东;郭宏观;李杰;张新春;张晓生"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\23、发明2018106374980-一种重力拉紧装置的位置调节装置、方法及带式输送机-发明专利证书(签章).pdf",
+    "sample_index": 23,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7770195",
+    "title": "一种重力拉紧装置的位置调节装置、方法及带式输送机",
+    "patent_no_raw": "ZL 2018 1 0637498.0",
+    "patent_no": "ZL201810637498.0",
+    "publication_no": "CN109051555B",
+    "application_date": "2018-06-20",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "穆慧灵",
+      "刘皞",
+      "石峥嵘",
+      "冯新强",
+      "王凯",
+      "谷盛"
+    ],
+    "application_date_inventors": [
+      "穆慧灵",
+      "刘皞",
+      "石峥嵘",
+      "冯新强",
+      "王凯",
+      "谷盛"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "穆慧灵;刘皞;石峥嵘;冯新强;王凯;谷盛"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\24、发明2022111994833-皮带机的排水装置-发明专利证书(签章).pdf",
+    "sample_index": 24,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7772908",
+    "title": "皮带机的排水装置",
+    "patent_no_raw": "ZL 2022 1 1199483.3",
+    "patent_no": "ZL202211199483.3",
+    "publication_no": "CN115447961B",
+    "application_date": "2022-09-29",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "李君华",
+      "王猛军",
+      "徐杨",
+      "苑小帅",
+      "姜卫平",
+      "王博"
+    ],
+    "application_date_inventors": [
+      "李君华",
+      "王猛军",
+      "徐杨",
+      "苑小帅",
+      "姜卫平",
+      "王博"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "李君华;王猛军;徐杨;苑小帅;姜卫平;王博"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\25、发明2022105360135-一种料场侧墙和料场-发明专利证书(签章).pdf",
+    "sample_index": 25,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7773978",
+    "title": "一种料场侧墙和料场",
+    "patent_no_raw": "ZL 2022 1 0536013.5",
+    "patent_no": "ZL202210536013.5",
+    "publication_no": "CN114922491B",
+    "application_date": "2022-05-13",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "李庆建",
+      "赵志伟",
+      "马骁",
+      "张宁",
+      "鞠红梅",
+      "刘晓东",
+      "柴洁",
+      "何欢"
+    ],
+    "application_date_inventors": [
+      "李庆建",
+      "赵志伟",
+      "马骁",
+      "张宁",
+      "鞠红梅",
+      "刘晓东",
+      "柴洁",
+      "何欢"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "李庆建;赵志伟;马骁;张宁;鞠红梅;刘晓东;柴洁;何欢"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\26、发明2021106214733-一种预应力锚栓安装结构及安装方法-发明专利证书(签章).pdf",
+    "sample_index": 26,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7774823",
+    "title": "一种预应力锚栓安装结构及安装方法",
+    "patent_no_raw": "ZL 2021 1 0621473.3",
+    "patent_no": "ZL202110621473.3",
+    "publication_no": "CN113186969B",
+    "application_date": "2021-06-03",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "王怀明",
+      "周兴华",
+      "徐世宏",
+      "彭刚平",
+      "赵玉琢",
+      "裴立勤",
+      "王玉林",
+      "刘玉飞",
+      "孙臣王子",
+      "陈冲",
+      "赵辉",
+      "张健翔",
+      "董宏季"
+    ],
+    "application_date_inventors": [
+      "王怀明",
+      "周兴华",
+      "徐世宏",
+      "彭刚平",
+      "赵玉琢",
+      "裴立勤",
+      "王玉林",
+      "刘玉飞",
+      "孙臣王子",
+      "陈冲",
+      "赵辉",
+      "张健翔",
+      "董宏季"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "王怀明;周兴华;徐世宏;彭刚平;赵玉琢;裴立勤;王玉林\n刘玉飞;孙臣王子;陈冲;赵辉;张健翔;董宏季"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\27、202420383103X-冷却塔-实用新型专利证书(签章).pdf",
+    "sample_index": 27,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22534697",
+    "title": "冷却塔",
+    "patent_no_raw": "ZL 2024 2 0383103.X",
+    "patent_no": "ZL202420383103.X",
+    "publication_no": "CN222558222U",
+    "application_date": "2024-02-28",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "苏海丽",
+      "侯亚委",
+      "石鑫",
+      "刘学武",
+      "王壬峰",
+      "张华松",
+      "陈有志"
+    ],
+    "application_date_inventors": [
+      "苏海丽",
+      "侯亚委",
+      "石鑫",
+      "刘学武",
+      "王壬峰",
+      "张华松",
+      "陈有志"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "苏海丽;侯亚委;石鑫;刘学武;王壬峰;张华松;陈有志"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\28、2024203563248-料仓钢桁架结构-实用新型专利证书(签章).pdf",
+    "sample_index": 28,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22547737",
+    "title": "料仓钢桁架结构",
+    "patent_no_raw": "ZL 2024 2 0356324.8",
+    "patent_no": "ZL202420356324.8",
+    "publication_no": "CN222557831U",
+    "application_date": "2024-02-26",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "苏海丽",
+      "赵迎九",
+      "刘学武",
+      "肖克勤",
+      "侯亚委",
+      "石鑫",
+      "肖强",
+      "张华松",
+      "陈有志"
+    ],
+    "application_date_inventors": [
+      "苏海丽",
+      "赵迎九",
+      "刘学武",
+      "肖克勤",
+      "侯亚委",
+      "石鑫",
+      "肖强",
+      "张华松",
+      "陈有志"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "苏海丽;赵迎九;刘学武;肖克勤;侯亚委;石鑫;肖强;张华松\n陈有志"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\29、发明2020106224247-一种靠船结构的堆放装置-发明专利证书(签章).pdf",
+    "sample_index": 29,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7771961",
+    "title": "一种靠船结构的堆放装置",
+    "patent_no_raw": "ZL 2020 1 0622424.7",
+    "patent_no": "ZL202010622424.7",
+    "publication_no": "CN111703544B",
+    "application_date": "2020-06-30",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张康",
+      "贺广零",
+      "郭小亮",
+      "郭玮",
+      "赵辉",
+      "解锦婷",
+      "陈冲",
+      "茹洋洋",
+      "孔德煌"
+    ],
+    "application_date_inventors": [
+      "张康",
+      "贺广零",
+      "郭小亮",
+      "郭玮",
+      "赵辉",
+      "解锦婷",
+      "陈冲",
+      "茹洋洋",
+      "孔德煌"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张康;贺广零;郭小亮;郭玮;赵辉;解锦婷;陈冲;茹洋洋\n孔德煌"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\30、2024205750520一种具有冲刷全景监测功能的海上风电基础.PDF",
+    "sample_index": 30,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22554634",
+    "title": "一种具有冲刷全景监测功能的海上风电基础",
+    "patent_no_raw": "ZL 2024 2 0575052.0",
+    "patent_no": "ZL202420575052.0",
+    "publication_no": "CN222575574U",
+    "application_date": "2024-03-22",
+    "grant_publication_date": "2025-03-07",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "芮守娟",
+      "袁新勇",
+      "余刚",
+      "刘玉飞",
+      "赵书华",
+      "王峰",
+      "王小合",
+      "罗玉涛",
+      "洪泽",
+      "李健",
+      "于自强"
+    ],
+    "application_date_inventors": [
+      "芮守娟",
+      "袁新勇",
+      "余刚",
+      "刘玉飞",
+      "赵书华",
+      "王峰",
+      "王小合",
+      "罗玉涛",
+      "洪泽",
+      "李健",
+      "于自强"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "芮守娟;袁新勇;余刚;刘玉飞;赵书华;王峰;王小合;罗玉涛\n洪泽;李健;于自强"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\31、发明2020108847079一种间接空冷系统及其密封方法.PDF",
+    "sample_index": 31,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7780652",
+    "title": "一种间接空冷系统及其密封方法",
+    "patent_no_raw": "ZL 2020 1 0884707.9",
+    "patent_no": "ZL202010884707.9",
+    "publication_no": "CN111854508B",
+    "application_date": "2020-08-28",
+    "grant_publication_date": "2025-03-07",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "李国栋",
+      "刘学",
+      "刘磊"
+    ],
+    "application_date_inventors": [
+      "李国栋",
+      "刘学",
+      "刘磊"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "李国栋;刘学;刘磊"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\32、2024200710118 一种水下桩桩顶标高测量装置.pdf",
+    "sample_index": 32,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22486359",
+    "title": "一种水下桩桩顶标高测量装置",
+    "patent_no_raw": "ZL 2024 2 0071011.8",
+    "patent_no": "ZL202420071011.8",
+    "publication_no": "CN222505395U",
+    "application_date": "2024-01-11",
+    "grant_publication_date": "2025-02-18",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "茹洋洋",
+      "牛文献",
+      "王小合",
+      "张清涛",
+      "赵辉",
+      "郭玮",
+      "王怀明",
+      "刘仁泉",
+      "罗玉涛",
+      "洪泽"
+    ],
+    "application_date_inventors": [
+      "茹洋洋",
+      "牛文献",
+      "王小合",
+      "张清涛",
+      "赵辉",
+      "郭玮",
+      "王怀明",
+      "刘仁泉",
+      "罗玉涛",
+      "洪泽"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "茹洋洋;牛文献;王小合;张清涛;赵辉;郭玮;王怀明;刘仁泉\n罗玉涛;洪泽"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\33、2024200710423 一种可变径导向辅助装置.pdf",
+    "sample_index": 33,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22501240",
+    "title": "一种可变径导向辅助装置",
+    "patent_no_raw": "ZL 2024 2 0071042.3",
+    "patent_no": "ZL202420071042.3",
+    "publication_no": "CN222513193U",
+    "application_date": "2024-01-11",
+    "grant_publication_date": "2025-02-21",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "高原",
+      "袁新勇",
+      "宋云峰",
+      "鲁成林",
+      "余刚",
+      "董宏季",
+      "李佳楠",
+      "林逸凡",
+      "陈冲",
+      "宪凯"
+    ],
+    "application_date_inventors": [
+      "高原",
+      "袁新勇",
+      "宋云峰",
+      "鲁成林",
+      "余刚",
+      "董宏季",
+      "李佳楠",
+      "林逸凡",
+      "陈冲",
+      "宪凯"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "高原;袁新勇;宋云峰;鲁成林;余刚;董宏季;李佳楠;林逸凡\n陈冲;宪凯"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\34、2024200710527一种吊车可在桩顶行走的施工装置.pdf",
+    "sample_index": 34,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22540470",
+    "title": "一种吊车可在桩顶行走的施工装置",
+    "patent_no_raw": "ZL 2024 2 0071052.7",
+    "patent_no": "ZL202420071052.7",
+    "publication_no": "CN222556433U",
+    "application_date": "2024-01-11",
+    "grant_publication_date": "2025-03-04",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "郭小亮",
+      "刘玉飞",
+      "逯鹏",
+      "张清涛",
+      "鲁成林",
+      "崔文涛",
+      "李佳楠",
+      "董宏季",
+      "卢国杰",
+      "张兴旺"
+    ],
+    "application_date_inventors": [
+      "郭小亮",
+      "刘玉飞",
+      "逯鹏",
+      "张清涛",
+      "鲁成林",
+      "崔文涛",
+      "李佳楠",
+      "董宏季",
+      "卢国杰",
+      "张兴旺"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "郭小亮;刘玉飞;逯鹏;张清涛;鲁成林;崔文涛;李佳楠\n董宏季;卢国杰;张兴旺"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\35、发明2018108476160一种汽轮机高背压供热发电联产系统.PDF",
+    "sample_index": 35,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7823806",
+    "title": "一种汽轮机高背压供热发电联产系统",
+    "patent_no_raw": "ZL 2018 1 0847616.0",
+    "patent_no": "ZL201810847616.0",
+    "publication_no": "CN109578096B",
+    "application_date": "2018-07-27",
+    "grant_publication_date": "2025-03-25",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "刘学",
+      "李国栋",
+      "张永锴",
+      "闫永晖",
+      "杨晓巳"
+    ],
+    "application_date_inventors": [
+      "刘学",
+      "李国栋",
+      "张永锴",
+      "闫永晖",
+      "杨晓巳"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "刘学;李国栋;张永锴;闫永晖;杨晓巳"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\36、2024203646560.PDF",
+    "sample_index": 36,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22670333",
+    "title": "嵌岩施工设备",
+    "patent_no_raw": "ZL 2024 2 0364656.0",
+    "patent_no": "ZL202420364656.0",
+    "publication_no": "CN222685471U",
+    "application_date": "2024-02-27",
+    "grant_publication_date": "2025-03-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张健翔",
+      "马春龙",
+      "余刚",
+      "董宏季",
+      "李世飞",
+      "崔文涛",
+      "王宗尧",
+      "郭玮",
+      "陈建征",
+      "张兴旺"
+    ],
+    "application_date_inventors": [
+      "张健翔",
+      "马春龙",
+      "余刚",
+      "董宏季",
+      "李世飞",
+      "崔文涛",
+      "王宗尧",
+      "郭玮",
+      "陈建征",
+      "张兴旺"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张健翔;马春龙;余刚;董宏季;李世飞;崔文涛;王宗尧;郭玮\n陈建征;张兴旺"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\37、2024213071038证书20250409.pdf",
+    "sample_index": 37,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22663718",
+    "title": "一种自升式吊机升高平台",
+    "patent_no_raw": "ZL 2024 2 1307103.8",
+    "patent_no": "ZL202421307103.8",
+    "publication_no": "CN222684228U",
+    "application_date": "2024-06-07",
+    "grant_publication_date": "2025-03-28",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "郭小亮",
+      "唐勇",
+      "袁新勇",
+      "张清涛",
+      "赵辉",
+      "崔文涛",
+      "田利勇",
+      "茹洋洋",
+      "马琦琳",
+      "王宗尧"
+    ],
+    "application_date_inventors": [
+      "郭小亮",
+      "唐勇",
+      "袁新勇",
+      "张清涛",
+      "赵辉",
+      "崔文涛",
+      "田利勇",
+      "茹洋洋",
+      "马琦琳",
+      "王宗尧"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "郭小亮;唐勇;袁新勇;张清涛;赵辉;崔文涛;田利勇;茹洋洋\n马琦琳;王宗尧"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\38、202010666524X-一种吸力筒运输固定装置-发明专利证书(签章).pdf",
+    "sample_index": 38,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7818244",
+    "title": "一种吸力筒运输固定装置",
+    "patent_no_raw": "ZL 2020 1 0666524.X",
+    "patent_no": "ZL202010666524.X",
+    "publication_no": "CN111807016B",
+    "application_date": "2020-07-10",
+    "grant_publication_date": "2025-03-21",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "张清涛",
+      "袁新勇",
+      "茹洋洋",
+      "张健翔",
+      "贺广零",
+      "宋云峰",
+      "崔文涛",
+      "安志才",
+      "于嘉"
+    ],
+    "application_date_inventors": [
+      "张清涛",
+      "袁新勇",
+      "茹洋洋",
+      "张健翔",
+      "贺广零",
+      "宋云峰",
+      "崔文涛",
+      "安志才",
+      "于嘉"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "张清涛;袁新勇;茹洋洋;张健翔;贺广零;宋云峰;崔文涛\n安志才;于嘉"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\39、202420526105X-连接结构及光伏支架-实用新型专利证书(签章).pdf",
+    "sample_index": 39,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22640735",
+    "title": "连接结构及光伏支架",
+    "patent_no_raw": "ZL 2024 2 0526105.X",
+    "patent_no": "ZL202420526105.X",
+    "publication_no": "CN222655119U",
+    "application_date": "2024-03-18",
+    "grant_publication_date": "2025-03-21",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "肖水",
+      "李萌",
+      "孟潮",
+      "赵光明",
+      "王琼琼",
+      "丁圣潇",
+      "廖鹏展",
+      "赵新辉",
+      "李杰"
+    ],
+    "application_date_inventors": [
+      "肖水",
+      "李萌",
+      "孟潮",
+      "赵光明",
+      "王琼琼",
+      "丁圣潇",
+      "廖鹏展",
+      "赵新辉",
+      "李杰"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "肖水;李萌;孟潮;赵光明;王琼琼;丁圣潇;廖鹏展;赵新辉\n李杰"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\40、2024202889527-光伏发电系统-实用新型专利证书(签章).pdf",
+    "sample_index": 40,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22640076",
+    "title": "光伏发电系统",
+    "patent_no_raw": "ZL 2024 2 0288952.7",
+    "patent_no": "ZL202420288952.7",
+    "publication_no": "CN222655071U",
+    "application_date": "2024-02-07",
+    "grant_publication_date": "2025-03-21",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "赵光明",
+      "石鑫",
+      "郭宏观",
+      "丁圣潇",
+      "廖鹏展",
+      "肖水",
+      "李杰",
+      "张新春",
+      "张晓生"
+    ],
+    "application_date_inventors": [
+      "赵光明",
+      "石鑫",
+      "郭宏观",
+      "丁圣潇",
+      "廖鹏展",
+      "肖水",
+      "李杰",
+      "张新春",
+      "张晓生"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "赵光明;石鑫;郭宏观;丁圣潇;廖鹏展;肖水;李杰;张新春\n张晓生"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\41、2019105732441-一种毂式节点网架和管桁架的插板连接结构的安装方法-发明专利证书(签章).pdf",
+    "sample_index": 41,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7830357",
+    "title": "一种毂式节点网架和管桁架的插板连接结构的安装方法",
+    "patent_no_raw": "ZL 2019 1 0573244.1",
+    "patent_no": "ZL201910573244.1",
+    "publication_no": "CN110273475B",
+    "application_date": "2019-06-27",
+    "grant_publication_date": "2025-03-25",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "李博",
+      "刘学武",
+      "侯亚委",
+      "赵志伟",
+      "赵迎九",
+      "李庆建",
+      "陈有志",
+      "牛防桥",
+      "苏海丽",
+      "史丙成",
+      "张丹"
+    ],
+    "application_date_inventors": [
+      "李博",
+      "刘学武",
+      "侯亚委",
+      "赵志伟",
+      "赵迎九",
+      "李庆建",
+      "陈有志",
+      "牛防桥",
+      "苏海丽",
+      "史丙成",
+      "张丹"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "李博;刘学武;侯亚委;赵志伟;赵迎九;李庆建;陈有志\n牛防桥;苏海丽;史丙成;张丹"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\42、2024212912801-网架连接单元及网架-实用新型专利证书(签章).pdf",
+    "sample_index": 42,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22659780",
+    "title": "网架连接单元及网架",
+    "patent_no_raw": "ZL 2024 2 1291280.1",
+    "patent_no": "ZL202421291280.1",
+    "publication_no": "CN222667057U",
+    "application_date": "2024-06-06",
+    "grant_publication_date": "2025-03-25",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "董宏季",
+      "逯鹏",
+      "成剑锋",
+      "张清涛",
+      "郭小亮",
+      "余刚",
+      "鲁成林",
+      "王琼琼",
+      "解锦婷",
+      "刘鑫"
+    ],
+    "application_date_inventors": [
+      "董宏季",
+      "逯鹏",
+      "成剑锋",
+      "张清涛",
+      "郭小亮",
+      "余刚",
+      "鲁成林",
+      "王琼琼",
+      "解锦婷",
+      "刘鑫"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "董宏季;逯鹏;成剑锋;张清涛;郭小亮;余刚;鲁成林;王琼琼\n解锦婷;刘鑫"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\43、2024203064470-防水光伏系统-实用新型专利证书(签章).pdf",
+    "sample_index": 43,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22646524",
+    "title": "防水光伏系统",
+    "patent_no_raw": "ZL 2024 2 0306447.0",
+    "patent_no": "ZL202420306447.0",
+    "publication_no": "CN222674235U",
+    "application_date": "2024-02-19",
+    "grant_publication_date": "2025-03-25",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "苏海丽",
+      "侯亚委",
+      "石鑫",
+      "刘学武",
+      "张华松",
+      "陈有志",
+      "李博",
+      "张丹",
+      "马凯彬",
+      "史丙成"
+    ],
+    "application_date_inventors": [
+      "苏海丽",
+      "侯亚委",
+      "石鑫",
+      "刘学武",
+      "张华松",
+      "陈有志",
+      "李博",
+      "张丹",
+      "马凯彬",
+      "史丙成"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "苏海丽;侯亚委;石鑫;刘学武;张华松;陈有志;李博;张丹\n马凯彬;史丙成"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\44、2024213060283-系泊缆绳和漂浮式基础-实用新型专利证书(签章).pdf",
+    "sample_index": 44,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22652817",
+    "title": "系泊缆绳和漂浮式基础",
+    "patent_no_raw": "ZL 2024 2 1306028.3",
+    "patent_no": "ZL202421306028.3",
+    "publication_no": "CN222663711U",
+    "application_date": "2024-06-07",
+    "grant_publication_date": "2025-03-25",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "董宏季",
+      "张清涛",
+      "崔文涛",
+      "李健",
+      "高原",
+      "李佳楠",
+      "林逸凡",
+      "宋云峰",
+      "闫雨成",
+      "轩陶静"
+    ],
+    "application_date_inventors": [
+      "董宏季",
+      "张清涛",
+      "崔文涛",
+      "李健",
+      "高原",
+      "李佳楠",
+      "林逸凡",
+      "宋云峰",
+      "闫雨成",
+      "轩陶静"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "董宏季;张清涛;崔文涛;李健;高原;李佳楠;林逸凡;宋云峰\n闫雨成;轩陶静"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\45、2024212192321-固定式光伏支架和光伏模组-实用新型专利证书(签章).pdf",
+    "sample_index": 45,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22650564",
+    "title": "固定式光伏支架和光伏模组",
+    "patent_no_raw": "ZL 2024 2 1219232.1",
+    "patent_no": "ZL202421219232.1",
+    "publication_no": "CN222674191U",
+    "application_date": "2024-05-30",
+    "grant_publication_date": "2025-03-25",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "马凯彬",
+      "侯亚委",
+      "石鑫",
+      "张华松",
+      "陈有志",
+      "苏海丽",
+      "史丙成",
+      "张丹",
+      "李博"
+    ],
+    "application_date_inventors": [
+      "马凯彬",
+      "侯亚委",
+      "石鑫",
+      "张华松",
+      "陈有志",
+      "苏海丽",
+      "史丙成",
+      "张丹",
+      "李博"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "马凯彬;侯亚委;石鑫;张华松;陈有志;苏海丽;史丙成;张丹\n李博"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\46、2020104707835-一种拖带装置及拖带系统-发明专利证书(签章).pdf",
+    "sample_index": 46,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "invention",
+    "certificate_no": "7831169",
+    "title": "一种拖带装置及拖带系统",
+    "patent_no_raw": "ZL 2020 1 0470783.5",
+    "patent_no": "ZL202010470783.5",
+    "publication_no": "CN111532662B",
+    "application_date": "2020-05-28",
+    "grant_publication_date": "2025-03-25",
+    "current_patentees": [
+      "中国华电科工集团有限公司",
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "中国华电科工集团有限公司",
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "王坚",
+      "张营章",
+      "赵勇",
+      "朱浩",
+      "霍佳",
+      "李君华"
+    ],
+    "application_date_inventors": [
+      "王坚",
+      "张营章",
+      "赵勇",
+      "朱浩",
+      "霍佳",
+      "李君华"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "中国华电科工集团有限公司;华电科工股份有限公司",
+      "inventors_raw": "王坚;张营章;赵勇;朱浩;霍佳;李君华"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "joint_current_patentees",
+        "joint_application_date_applicants"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\47、2024213498071-一种海上制氢平台及海上风电制氢系统-实用新型专利证书(签章).pdf",
+    "sample_index": 47,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22752646",
+    "title": "一种海上制氢平台及海上风电制氢系统",
+    "patent_no_raw": "ZL 2024 2 1349807.1",
+    "patent_no": "ZL202421349807.1",
+    "publication_no": "CN222770973U",
+    "application_date": "2024-06-13",
+    "grant_publication_date": "2025-04-18",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "王峰",
+      "张清涛",
+      "芮守娟",
+      "郭小亮",
+      "林逸凡",
+      "蔡靖",
+      "赵辉",
+      "崔文涛",
+      "董宏季",
+      "刘鑫"
+    ],
+    "application_date_inventors": [
+      "王峰",
+      "张清涛",
+      "芮守娟",
+      "郭小亮",
+      "林逸凡",
+      "蔡靖",
+      "赵辉",
+      "崔文涛",
+      "董宏季",
+      "刘鑫"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "王峰;张清涛;芮守娟;郭小亮;林逸凡;蔡靖;赵辉;崔文涛\n董宏季;刘鑫"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\48、2024202906452-光伏支架基础和光伏发电系统-实用新型专利证书(签章).pdf",
+    "sample_index": 48,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22756729",
+    "title": "光伏支架基础和光伏发电系统",
+    "patent_no_raw": "ZL 2024 2 0290645.2",
+    "patent_no": "ZL202420290645.2",
+    "publication_no": "CN222771517U",
+    "application_date": "2024-02-08",
+    "grant_publication_date": "2025-04-18",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "赵光明",
+      "石鑫",
+      "廖鹏展",
+      "葛圳东",
+      "郭宏观",
+      "李杰",
+      "张新春",
+      "刘开辉"
+    ],
+    "application_date_inventors": [
+      "赵光明",
+      "石鑫",
+      "廖鹏展",
+      "葛圳东",
+      "郭宏观",
+      "李杰",
+      "张新春",
+      "刘开辉"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "赵光明;石鑫;廖鹏展;葛圳东;郭宏观;李杰;张新春;刘开辉"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": []
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\49、2024205592461-漂浮式基础坐底装置和风机组装系统-实用新型专利证书(签章).pdf",
+    "sample_index": 49,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22751926",
+    "title": "漂浮式基础坐底装置和风机组装系统",
+    "patent_no_raw": "ZL 2024 2 0559246.1",
+    "patent_no": "ZL202420559246.1",
+    "publication_no": "CN222769552U",
+    "application_date": "2024-03-21",
+    "grant_publication_date": "2025-04-18",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "茹洋洋",
+      "逯鹏",
+      "刘玉飞",
+      "余刚",
+      "赵辉",
+      "鲁成林",
+      "李佳楠",
+      "王怀明",
+      "郭玮",
+      "董宏季"
+    ],
+    "application_date_inventors": [
+      "茹洋洋",
+      "逯鹏",
+      "刘玉飞",
+      "余刚",
+      "赵辉",
+      "鲁成林",
+      "李佳楠",
+      "王怀明",
+      "郭玮",
+      "董宏季"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "茹洋洋;逯鹏;刘玉飞;余刚;赵辉;鲁成林;李佳楠;王怀明\n郭玮;董宏季"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  },
+  {
+    "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\50、2024213417534-沉桩定位装置-实用新型专利证书(签章).pdf",
+    "sample_index": 50,
+    "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+    "page_count": 1,
+    "patent_type": "utility_model",
+    "certificate_no": "22760223",
+    "title": "沉桩定位装置",
+    "patent_no_raw": "ZL 2024 2 1341753.4",
+    "patent_no": "ZL202421341753.4",
+    "publication_no": "CN222771473U",
+    "application_date": "2024-06-12",
+    "grant_publication_date": "2025-04-18",
+    "current_patentees": [
+      "华电科工股份有限公司"
+    ],
+    "application_date_applicants": [
+      "华电重工股份有限公司"
+    ],
+    "inventors": [
+      "鲁成林",
+      "逯鹏",
+      "刘玉飞",
+      "郭小亮",
+      "赵辉",
+      "余刚",
+      "张清涛",
+      "李世飞",
+      "张野",
+      "闫明辉",
+      "崔文涛"
+    ],
+    "application_date_inventors": [
+      "鲁成林",
+      "逯鹏",
+      "刘玉飞",
+      "郭小亮",
+      "赵辉",
+      "余刚",
+      "张清涛",
+      "李世飞",
+      "张野",
+      "闫明辉",
+      "崔文涛"
+    ],
+    "source_evidence": {
+      "current_patentees_raw": "华电科工股份有限公司",
+      "inventors_raw": "鲁成林;逯鹏;刘玉飞;郭小亮;赵辉;余刚;张清涛;李世飞\n张野;闫明辉;崔文涛"
+    },
+    "review": {
+      "status": "verified_against_certificate_text_layer",
+      "needs_review": [],
+      "notes": [
+        "inventor_list_cross_line_reconstructed"
+      ]
+    }
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\29、发明2020106224247-一种靠船结构的堆放装置-发明专利证书(签章).pdf",
+  "sample_index": 29,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7771961",
+  "title": "一种靠船结构的堆放装置",
+  "patent_no_raw": "ZL 2020 1 0622424.7",
+  "patent_no": "ZL202010622424.7",
+  "publication_no": "CN111703544B",
+  "application_date": "2020-06-30",
+  "grant_publication_date": "2025-03-04",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "张康",
+    "贺广零",
+    "郭小亮",
+    "郭玮",
+    "赵辉",
+    "解锦婷",
+    "陈冲",
+    "茹洋洋",
+    "孔德煌"
+  ],
+  "application_date_inventors": [
+    "张康",
+    "贺广零",
+    "郭小亮",
+    "郭玮",
+    "赵辉",
+    "解锦婷",
+    "陈冲",
+    "茹洋洋",
+    "孔德煌"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "张康;贺广零;郭小亮;郭玮;赵辉;解锦婷;陈冲;茹洋洋\n孔德煌"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

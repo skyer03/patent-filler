@@ -1,0 +1,41 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\2、2023229875932一种水库防冰盖输水管道装置.pdf",
+  "sample_index": 2,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "21727118",
+  "title": "一种水库防冰盖输水管道装置",
+  "patent_no_raw": "ZL 2023 2 2987593.2",
+  "patent_no": "ZL202322987593.2",
+  "publication_no": "CN221741187U",
+  "application_date": "2023-11-06",
+  "grant_publication_date": "2024-09-20",
+  "current_patentees": [
+    "华电重工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "马骁",
+    "刘晓东",
+    "赵迎九",
+    "柴少泰"
+  ],
+  "application_date_inventors": [
+    "马骁",
+    "刘晓东",
+    "赵迎九",
+    "柴少泰"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电重工股份有限公司",
+    "inventors_raw": "马骁;刘晓东;赵迎九;柴少泰"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

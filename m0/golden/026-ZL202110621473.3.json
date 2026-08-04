@@ -1,0 +1,61 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\26、发明2021106214733-一种预应力锚栓安装结构及安装方法-发明专利证书(签章).pdf",
+  "sample_index": 26,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7774823",
+  "title": "一种预应力锚栓安装结构及安装方法",
+  "patent_no_raw": "ZL 2021 1 0621473.3",
+  "patent_no": "ZL202110621473.3",
+  "publication_no": "CN113186969B",
+  "application_date": "2021-06-03",
+  "grant_publication_date": "2025-03-04",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "王怀明",
+    "周兴华",
+    "徐世宏",
+    "彭刚平",
+    "赵玉琢",
+    "裴立勤",
+    "王玉林",
+    "刘玉飞",
+    "孙臣王子",
+    "陈冲",
+    "赵辉",
+    "张健翔",
+    "董宏季"
+  ],
+  "application_date_inventors": [
+    "王怀明",
+    "周兴华",
+    "徐世宏",
+    "彭刚平",
+    "赵玉琢",
+    "裴立勤",
+    "王玉林",
+    "刘玉飞",
+    "孙臣王子",
+    "陈冲",
+    "赵辉",
+    "张健翔",
+    "董宏季"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "王怀明;周兴华;徐世宏;彭刚平;赵玉琢;裴立勤;王玉林\n刘玉飞;孙臣王子;陈冲;赵辉;张健翔;董宏季"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

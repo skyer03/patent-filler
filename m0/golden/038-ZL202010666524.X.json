@@ -1,0 +1,53 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\38、202010666524X-一种吸力筒运输固定装置-发明专利证书(签章).pdf",
+  "sample_index": 38,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7818244",
+  "title": "一种吸力筒运输固定装置",
+  "patent_no_raw": "ZL 2020 1 0666524.X",
+  "patent_no": "ZL202010666524.X",
+  "publication_no": "CN111807016B",
+  "application_date": "2020-07-10",
+  "grant_publication_date": "2025-03-21",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "张清涛",
+    "袁新勇",
+    "茹洋洋",
+    "张健翔",
+    "贺广零",
+    "宋云峰",
+    "崔文涛",
+    "安志才",
+    "于嘉"
+  ],
+  "application_date_inventors": [
+    "张清涛",
+    "袁新勇",
+    "茹洋洋",
+    "张健翔",
+    "贺广零",
+    "宋云峰",
+    "崔文涛",
+    "安志才",
+    "于嘉"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "张清涛;袁新勇;茹洋洋;张健翔;贺广零;宋云峰;崔文涛\n安志才;于嘉"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

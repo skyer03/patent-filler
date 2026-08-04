@@ -1,0 +1,45 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\24、发明2022111994833-皮带机的排水装置-发明专利证书(签章).pdf",
+  "sample_index": 24,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7772908",
+  "title": "皮带机的排水装置",
+  "patent_no_raw": "ZL 2022 1 1199483.3",
+  "patent_no": "ZL202211199483.3",
+  "publication_no": "CN115447961B",
+  "application_date": "2022-09-29",
+  "grant_publication_date": "2025-03-04",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "李君华",
+    "王猛军",
+    "徐杨",
+    "苑小帅",
+    "姜卫平",
+    "王博"
+  ],
+  "application_date_inventors": [
+    "李君华",
+    "王猛军",
+    "徐杨",
+    "苑小帅",
+    "姜卫平",
+    "王博"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "李君华;王猛军;徐杨;苑小帅;姜卫平;王博"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

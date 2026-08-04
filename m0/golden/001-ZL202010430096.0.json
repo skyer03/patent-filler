@@ -1,0 +1,55 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\1、发明2020104300960 一种海上风机基础、拖航及安装方法.PDF",
+  "sample_index": 1,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7668232",
+  "title": "一种海上风机基础、拖航及安装方法",
+  "patent_no_raw": "ZL 2020 1 0430096.0",
+  "patent_no": "ZL202010430096.0",
+  "publication_no": "CN111472379B",
+  "application_date": "2020-05-20",
+  "grant_publication_date": "2025-01-14",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "张健翔",
+    "张星波",
+    "王小合",
+    "郭小亮",
+    "崔文涛",
+    "贺广零",
+    "闵巧玲",
+    "赵玉琢",
+    "鲁成林",
+    "袁新勇"
+  ],
+  "application_date_inventors": [
+    "张健翔",
+    "张星波",
+    "王小合",
+    "郭小亮",
+    "崔文涛",
+    "贺广零",
+    "闵巧玲",
+    "赵玉琢",
+    "鲁成林",
+    "袁新勇"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "张健翔;张星波;王小合;郭小亮;崔文涛;贺广零;闵巧玲\n赵玉琢;鲁成林;袁新勇"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

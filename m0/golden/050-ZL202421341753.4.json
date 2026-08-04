@@ -1,0 +1,57 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\50、2024213417534-沉桩定位装置-实用新型专利证书(签章).pdf",
+  "sample_index": 50,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22760223",
+  "title": "沉桩定位装置",
+  "patent_no_raw": "ZL 2024 2 1341753.4",
+  "patent_no": "ZL202421341753.4",
+  "publication_no": "CN222771473U",
+  "application_date": "2024-06-12",
+  "grant_publication_date": "2025-04-18",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "鲁成林",
+    "逯鹏",
+    "刘玉飞",
+    "郭小亮",
+    "赵辉",
+    "余刚",
+    "张清涛",
+    "李世飞",
+    "张野",
+    "闫明辉",
+    "崔文涛"
+  ],
+  "application_date_inventors": [
+    "鲁成林",
+    "逯鹏",
+    "刘玉飞",
+    "郭小亮",
+    "赵辉",
+    "余刚",
+    "张清涛",
+    "李世飞",
+    "张野",
+    "闫明辉",
+    "崔文涛"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "鲁成林;逯鹏;刘玉飞;郭小亮;赵辉;余刚;张清涛;李世飞\n张野;闫明辉;崔文涛"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\34、2024200710527一种吊车可在桩顶行走的施工装置.pdf",
+  "sample_index": 34,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22540470",
+  "title": "一种吊车可在桩顶行走的施工装置",
+  "patent_no_raw": "ZL 2024 2 0071052.7",
+  "patent_no": "ZL202420071052.7",
+  "publication_no": "CN222556433U",
+  "application_date": "2024-01-11",
+  "grant_publication_date": "2025-03-04",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "郭小亮",
+    "刘玉飞",
+    "逯鹏",
+    "张清涛",
+    "鲁成林",
+    "崔文涛",
+    "李佳楠",
+    "董宏季",
+    "卢国杰",
+    "张兴旺"
+  ],
+  "application_date_inventors": [
+    "郭小亮",
+    "刘玉飞",
+    "逯鹏",
+    "张清涛",
+    "鲁成林",
+    "崔文涛",
+    "李佳楠",
+    "董宏季",
+    "卢国杰",
+    "张兴旺"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "郭小亮;刘玉飞;逯鹏;张清涛;鲁成林;崔文涛;李佳楠\n董宏季;卢国杰;张兴旺"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

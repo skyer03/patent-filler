@@ -1,0 +1,53 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\17、发明2020106665610-一种舱底结构及坐底驳船-发明专利证书(签章).pdf",
+  "sample_index": 17,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7767611",
+  "title": "一种舱底结构及坐底驳船",
+  "patent_no_raw": "ZL 2020 1 0666561.0",
+  "patent_no": "ZL202010666561.0",
+  "publication_no": "CN111776134B",
+  "application_date": "2020-07-10",
+  "grant_publication_date": "2025-02-28",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "张健翔",
+    "贺广零",
+    "任宪刚",
+    "王怀明",
+    "陈建征",
+    "王宗尧",
+    "杜洪岩",
+    "赵辉",
+    "罗玉涛"
+  ],
+  "application_date_inventors": [
+    "张健翔",
+    "贺广零",
+    "任宪刚",
+    "王怀明",
+    "陈建征",
+    "王宗尧",
+    "杜洪岩",
+    "赵辉",
+    "罗玉涛"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "张健翔;贺广零;任宪刚;王怀明;陈建征;王宗尧;杜洪岩\n赵辉;罗玉涛"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\14、2024209875169-柔性光伏支架抗风稳定装置、柔性光伏支架及光伏系统-实用新型专利证书(签章).pdf",
+  "sample_index": 14,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22489575",
+  "title": "柔性光伏支架抗风稳定装置、柔性光伏支架及光伏系统",
+  "patent_no_raw": "ZL 2024 2 0987516.9",
+  "patent_no": "ZL202420987516.9",
+  "publication_no": "CN222509194U",
+  "application_date": "2024-05-08",
+  "grant_publication_date": "2025-02-18",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "孟潮",
+    "赵光明",
+    "石鑫",
+    "丁圣潇",
+    "王琼琼",
+    "葛圳东",
+    "王倩倩",
+    "张晓生"
+  ],
+  "application_date_inventors": [
+    "孟潮",
+    "赵光明",
+    "石鑫",
+    "丁圣潇",
+    "王琼琼",
+    "葛圳东",
+    "王倩倩",
+    "张晓生"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "孟潮;赵光明;石鑫;丁圣潇;王琼琼;葛圳东;王倩倩;张晓生"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

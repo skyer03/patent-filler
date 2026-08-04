@@ -1,0 +1,15 @@
+{
+  "format": "m5-template-set-v1",
+  "profile_id": "cnipa_intranet",
+  "profile_version": "m5.1.0-field-2026-08-04",
+  "status": "ocr_first_field_capture_pending",
+  "templates": [],
+  "policy": {
+    "source": "现场审核截图中的稳定图标或按钮小截图",
+    "allowed_formats": ["png", "jpg", "jpeg", "bmp"],
+    "threshold": 0.92,
+    "use": "仅作为 OCR/相对锚点的确认信号，不单独驱动输入",
+    "do_not_capture": ["身份证号", "手机号", "邮箱", "证书全文", "业务数据值"]
+  },
+  "replacement": "将现场审核后的稳定控件裁剪图放入本目录，并在 templates 中登记 name、file 和 source_step；没有现场证据时保持空数组。"
+}

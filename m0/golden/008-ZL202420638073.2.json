@@ -1,0 +1,41 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\8、2024206380732一种金属陶瓷粉末面层材料研发用检测装置.pdf",
+  "sample_index": 8,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22411100",
+  "title": "一种金属陶瓷粉末面层材料研发用检测装置",
+  "patent_no_raw": "ZL 2024 2 0638073.2",
+  "patent_no": "ZL202420638073.2",
+  "publication_no": "CN222439428U",
+  "application_date": "2024-03-29",
+  "grant_publication_date": "2025-02-07",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "任嘉庆",
+    "张淼",
+    "刘学",
+    "杨晓巳"
+  ],
+  "application_date_inventors": [
+    "任嘉庆",
+    "张淼",
+    "刘学",
+    "杨晓巳"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "任嘉庆;张淼;刘学;杨晓巳"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

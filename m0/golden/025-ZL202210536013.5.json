@@ -1,0 +1,49 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\25、发明2022105360135-一种料场侧墙和料场-发明专利证书(签章).pdf",
+  "sample_index": 25,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7773978",
+  "title": "一种料场侧墙和料场",
+  "patent_no_raw": "ZL 2022 1 0536013.5",
+  "patent_no": "ZL202210536013.5",
+  "publication_no": "CN114922491B",
+  "application_date": "2022-05-13",
+  "grant_publication_date": "2025-03-04",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "李庆建",
+    "赵志伟",
+    "马骁",
+    "张宁",
+    "鞠红梅",
+    "刘晓东",
+    "柴洁",
+    "何欢"
+  ],
+  "application_date_inventors": [
+    "李庆建",
+    "赵志伟",
+    "马骁",
+    "张宁",
+    "鞠红梅",
+    "刘晓东",
+    "柴洁",
+    "何欢"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "李庆建;赵志伟;马骁;张宁;鞠红梅;刘晓东;柴洁;何欢"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

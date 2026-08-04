@@ -1,0 +1,59 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\20、发明202011644446X-一种钢结构冷却塔围护结构.pdf",
+  "sample_index": 20,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7769952",
+  "title": "一种钢结构冷却塔围护结构",
+  "patent_no_raw": "ZL 2020 1 1644446.X",
+  "patent_no": "ZL202011644446.X",
+  "publication_no": "CN112727175B",
+  "application_date": "2020-12-31",
+  "grant_publication_date": "2025-02-28",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "侯亚委",
+    "刘学武",
+    "王二峰",
+    "李庆建",
+    "李博",
+    "崔禹婷",
+    "陈有志",
+    "苏海丽",
+    "赵志伟",
+    "史丙成",
+    "张丹",
+    "马凯彬"
+  ],
+  "application_date_inventors": [
+    "侯亚委",
+    "刘学武",
+    "王二峰",
+    "李庆建",
+    "李博",
+    "崔禹婷",
+    "陈有志",
+    "苏海丽",
+    "赵志伟",
+    "史丙成",
+    "张丹",
+    "马凯彬"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "侯亚委;刘学武;王二峰;李庆建;李博;崔禹婷;陈有志\n苏海丽;赵志伟;史丙成;张丹;马凯彬"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

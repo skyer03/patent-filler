@@ -1,0 +1,49 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\48、2024202906452-光伏支架基础和光伏发电系统-实用新型专利证书(签章).pdf",
+  "sample_index": 48,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22756729",
+  "title": "光伏支架基础和光伏发电系统",
+  "patent_no_raw": "ZL 2024 2 0290645.2",
+  "patent_no": "ZL202420290645.2",
+  "publication_no": "CN222771517U",
+  "application_date": "2024-02-08",
+  "grant_publication_date": "2025-04-18",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "赵光明",
+    "石鑫",
+    "廖鹏展",
+    "葛圳东",
+    "郭宏观",
+    "李杰",
+    "张新春",
+    "刘开辉"
+  ],
+  "application_date_inventors": [
+    "赵光明",
+    "石鑫",
+    "廖鹏展",
+    "葛圳东",
+    "郭宏观",
+    "李杰",
+    "张新春",
+    "刘开辉"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "赵光明;石鑫;廖鹏展;葛圳东;郭宏观;李杰;张新春;刘开辉"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": []
+  }
+}

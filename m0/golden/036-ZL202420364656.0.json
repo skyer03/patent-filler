@@ -1,0 +1,55 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\36、2024203646560.PDF",
+  "sample_index": 36,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22670333",
+  "title": "嵌岩施工设备",
+  "patent_no_raw": "ZL 2024 2 0364656.0",
+  "patent_no": "ZL202420364656.0",
+  "publication_no": "CN222685471U",
+  "application_date": "2024-02-27",
+  "grant_publication_date": "2025-03-28",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "张健翔",
+    "马春龙",
+    "余刚",
+    "董宏季",
+    "李世飞",
+    "崔文涛",
+    "王宗尧",
+    "郭玮",
+    "陈建征",
+    "张兴旺"
+  ],
+  "application_date_inventors": [
+    "张健翔",
+    "马春龙",
+    "余刚",
+    "董宏季",
+    "李世飞",
+    "崔文涛",
+    "王宗尧",
+    "郭玮",
+    "陈建征",
+    "张兴旺"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "张健翔;马春龙;余刚;董宏季;李世飞;崔文涛;王宗尧;郭玮\n陈建征;张兴旺"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

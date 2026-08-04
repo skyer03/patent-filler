@@ -1,0 +1,50 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\46、2020104707835-一种拖带装置及拖带系统-发明专利证书(签章).pdf",
+  "sample_index": 46,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "invention",
+  "certificate_no": "7831169",
+  "title": "一种拖带装置及拖带系统",
+  "patent_no_raw": "ZL 2020 1 0470783.5",
+  "patent_no": "ZL202010470783.5",
+  "publication_no": "CN111532662B",
+  "application_date": "2020-05-28",
+  "grant_publication_date": "2025-03-25",
+  "current_patentees": [
+    "中国华电科工集团有限公司",
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "中国华电科工集团有限公司",
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "王坚",
+    "张营章",
+    "赵勇",
+    "朱浩",
+    "霍佳",
+    "李君华"
+  ],
+  "application_date_inventors": [
+    "王坚",
+    "张营章",
+    "赵勇",
+    "朱浩",
+    "霍佳",
+    "李君华"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "中国华电科工集团有限公司;华电科工股份有限公司",
+    "inventors_raw": "王坚;张营章;赵勇;朱浩;霍佳;李君华"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "joint_current_patentees",
+      "joint_application_date_applicants"
+    ]
+  }
+}

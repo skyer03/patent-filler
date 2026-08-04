@@ -1,0 +1,16 @@
+{
+  "sample_count": 50,
+  "one_page_text_layer_samples": 50,
+  "certificate_templates": [
+    "cnipa_electronic_one_page_text_layer_2024"
+  ],
+  "patent_type_counts": {
+    "invention": 18,
+    "utility_model": 32
+  },
+  "joint_current_patentee_samples": [
+    9,
+    46
+  ],
+  "status": "passed"
+}

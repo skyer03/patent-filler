@@ -1,0 +1,55 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\49、2024205592461-漂浮式基础坐底装置和风机组装系统-实用新型专利证书(签章).pdf",
+  "sample_index": 49,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22751926",
+  "title": "漂浮式基础坐底装置和风机组装系统",
+  "patent_no_raw": "ZL 2024 2 0559246.1",
+  "patent_no": "ZL202420559246.1",
+  "publication_no": "CN222769552U",
+  "application_date": "2024-03-21",
+  "grant_publication_date": "2025-04-18",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "茹洋洋",
+    "逯鹏",
+    "刘玉飞",
+    "余刚",
+    "赵辉",
+    "鲁成林",
+    "李佳楠",
+    "王怀明",
+    "郭玮",
+    "董宏季"
+  ],
+  "application_date_inventors": [
+    "茹洋洋",
+    "逯鹏",
+    "刘玉飞",
+    "余刚",
+    "赵辉",
+    "鲁成林",
+    "李佳楠",
+    "王怀明",
+    "郭玮",
+    "董宏季"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "茹洋洋;逯鹏;刘玉飞;余刚;赵辉;鲁成林;李佳楠;王怀明\n郭玮;董宏季"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}

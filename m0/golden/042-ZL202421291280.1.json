@@ -1,0 +1,55 @@
+{
+  "source_file": "C:\\Users\\27512\\Desktop\\专利填写\\本部专利证书\\2025年本部专利证书（1-50）\\42、2024212912801-网架连接单元及网架-实用新型专利证书(签章).pdf",
+  "sample_index": 42,
+  "certificate_template": "cnipa_electronic_one_page_text_layer_2024",
+  "page_count": 1,
+  "patent_type": "utility_model",
+  "certificate_no": "22659780",
+  "title": "网架连接单元及网架",
+  "patent_no_raw": "ZL 2024 2 1291280.1",
+  "patent_no": "ZL202421291280.1",
+  "publication_no": "CN222667057U",
+  "application_date": "2024-06-06",
+  "grant_publication_date": "2025-03-25",
+  "current_patentees": [
+    "华电科工股份有限公司"
+  ],
+  "application_date_applicants": [
+    "华电重工股份有限公司"
+  ],
+  "inventors": [
+    "董宏季",
+    "逯鹏",
+    "成剑锋",
+    "张清涛",
+    "郭小亮",
+    "余刚",
+    "鲁成林",
+    "王琼琼",
+    "解锦婷",
+    "刘鑫"
+  ],
+  "application_date_inventors": [
+    "董宏季",
+    "逯鹏",
+    "成剑锋",
+    "张清涛",
+    "郭小亮",
+    "余刚",
+    "鲁成林",
+    "王琼琼",
+    "解锦婷",
+    "刘鑫"
+  ],
+  "source_evidence": {
+    "current_patentees_raw": "华电科工股份有限公司",
+    "inventors_raw": "董宏季;逯鹏;成剑锋;张清涛;郭小亮;余刚;鲁成林;王琼琼\n解锦婷;刘鑫"
+  },
+  "review": {
+    "status": "verified_against_certificate_text_layer",
+    "needs_review": [],
+    "notes": [
+      "inventor_list_cross_line_reconstructed"
+    ]
+  }
+}
