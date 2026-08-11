@@ -1,4 +1,15 @@
-# 专利证书自动识别填报：M1/M2/M3/M4/M5/M6
+# 专利证书自动识别填报：M1/M2/M3/M4/M5/M6/M7
+
+当前默认真实网页路线已切换为企业 Edge DOM 扩展：桌面程序继续本地解析和人工校对，扩展通过 Native Messaging 读取唯一的已审核任务，在现有已登录 Edge 中逐字段预填并回读，最后停在人工保存前。屏幕 OCR/键鼠执行器保留为高级诊断和兜底，不再是默认真实网页执行器。
+
+快速准备扩展任务：
+
+```powershell
+python -m app dom prepare m0\golden\001-ZL202010430096.0.json
+python -m app dom status
+```
+
+扩展安装、权限最小化、脱敏校准与现场验收见 [`EDGE_EXTENSION_OPERATIONS.md`](EDGE_EXTENSION_OPERATIONS.md)。
 
 M1 提供本地专利证书解析、人工校对和结构化 JSON 导入/导出。M2 增加离线仿真页、截图查看器、OCR/模板锚点识别和 Windows 窗口绑定。M3 增加不依赖 DOM 的轻量自动化引擎 PoC：每个动作都在新观察后执行并回读验证；保存、返回和删除仍不会自动执行。
 
@@ -9,7 +20,7 @@ M1 提供本地专利证书解析、人工校对和结构化 JSON 导入/导出�
     pip install -r requirements.txt
     python -m app ui
 
-文本层证书使用 PyMuPDF 直接解析。扫描证书会自动进入 OCR 回退路径；该路径需要本机已安装 Tesseract，并安装 pytesseract 和中文语言包 chi_sim。OCR 不可用时，程序会明确报错并保留人工校对入口，不会输出看似成功的猜测结果。
+文本层证书使用 PyMuPDF 直接解析。扫描证书会自动进入 PaddleOCR 回退路径；项目提供 CPU 运行时和本地中文模型，不需要安装 Tesseract。OCR 不可用时，程序会明确报错并保留人工校对入口，不会输出看似成功的猜测结果。
 
 ## 命令行
 
@@ -124,3 +135,39 @@ python -m app m6-package --output build\m6_offline_package.zip
 ```
 
 M6 的安装、升级、profile 兼容性检查、配置回滚和现场运行清单见 [`M6_OPERATIONS.md`](M6_OPERATIONS.md)。
+
+## M7 一键自动填写
+
+M7 首页默认流程是“打开现有已登录 Edge 页面、上传并校对证书、准备 Edge 扩展任务”。直接启动：
+
+```text
+python -m app
+```
+
+桌面界面依赖官方 Windows Python 自带的 Tcl/Tk；若启动提示该组件不可用，请用 Python 安装程序执行 Modify/Repair 并勾选 `tcl/tk and IDLE`。
+
+也可以显式启动 `python -m app m7`。打开待填写的 Edge 专利信息页后：
+
+1. 上传一份 PDF 或已校对 JSON，修正并确认所有待复核字段；
+2. 点击“准备 Edge 扩展任务”；
+3. 在当前专利页面打开扩展，点击“读取当前任务”和“开始预填”；
+4. 扩展完成后人工检查并手动保存。
+
+程序只发布唯一的已审核本地任务。扩展按真实 DOM 控件逐项填写并回读：默认空字段会填写、相同值会跳过、已有冲突值立即停止；如需更新已有值，必须在桌面程序明确勾选并确认“允许覆盖已有值”后重新发布覆盖任务。页面指纹/Profile 不一致、控件不唯一或回读失败时仍立即停止。填写成功后停在保存前，由用户检查并手动保存。
+
+仿真、只识别、显式单步、受控批量、配置/Profile 和诊断入口保留在“高级设置”中：
+
+- `simulation` 只使用 `InMemoryPageAdapter`，用于可重复的离线验证，不代表真实网页已填写；
+- `recognition_only` 使用 M5 截图识别，不发送输入；
+- `step` 和“旧版屏幕填写”保留兼容的显式动作调试入口；正式单文件填写使用 Edge DOM 扩展；
+- `controlled_batch` 使用 M6 本地队列和 checkpoint，默认首个失败即停机，并只在离线模拟页执行批量回归。
+
+Edge 扩展 Profile 通过脱敏 DOM 校准文件维护，首版启用专利号、申请名称、申请类型、申请受理日、授权公告日和人工明确的联合申请。窗口尺寸和缩放不参与 DOM 坐标定位，但仍应在现场验证页面响应式布局。展开 M7 高级设置仍可使用屏幕“只识别定位”“读取当前值”“确认并测试”；这些能力不代表扩展 Profile 已完成校准。
+
+程序不会自动点击保存、提交、返回或删除，也不会自动创建下一条记录。M7 的安装、升级、测试命令和现场操作见 [`M7_OPERATIONS.md`](M7_OPERATIONS.md)，现场验收记录使用 [`M7_FIELD_ACCEPTANCE_RECORD.md`](M7_FIELD_ACCEPTANCE_RECORD.md)。构建最终离线包：
+
+```text
+python -m app m7-package --output build/m7_offline_package.zip
+```
+
+For the bundled Windows OCR runtime, run `start_m7.cmd` or `start_mock_site.cmd` from the project root. The local PaddleOCR CPU models are stored under `resources/ocr_models/paddle`; Tesseract is not required.

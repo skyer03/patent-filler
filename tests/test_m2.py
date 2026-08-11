@@ -118,6 +118,13 @@ class M2UtilityTests(unittest.TestCase):
 
         self.assertEqual(WindowBinder.screen_point(refreshed, 25, 30), (265, 390))
 
+    def test_window_title_matching_ignores_edge_zero_width_characters(self) -> None:
+        actual = "专利信息库 - M2 离线仿真页 - 个人 - Microsoft\u200b Edge"
+
+        self.assertTrue(WindowBinder.title_matches("Microsoft Edge", actual))
+        self.assertTrue(WindowBinder.title_matches("  M2   离线仿真页 ", actual))
+        self.assertTrue(WindowBinder.is_browser_title(actual))
+
     def test_template_matcher_returns_high_confidence_exact_crop(self) -> None:
         image = Image.new("RGB", (8, 8), "white")
         pixels = image.load()
@@ -135,6 +142,8 @@ class M2UtilityTests(unittest.TestCase):
 
     def test_mock_page_contains_required_controls_and_states(self) -> None:
         html = (ROOT / "mock_site" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("html { width: 100%; max-width: 100%; overflow-x: hidden; }", html)
+        self.assertIn(".toolbar > span { flex: 1 1 100%;", html)
         for text in (
             "科技项目管理系统 信息版",
             "专利信息库",

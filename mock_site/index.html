@@ -7,11 +7,14 @@
   <style>
     :root { font-family: "Microsoft YaHei", "Segoe UI", sans-serif; color: #182230; background: #f2f4f7; }
     * { box-sizing: border-box; }
-    body { margin: 0; min-width: 980px; }
-    .topbar { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 22px; padding: 14px 28px; color: white; background: #17365d; box-shadow: 0 2px 8px #0003; }
+    html { width: 100%; max-width: 100%; overflow-x: hidden; }
+    body { width: 100%; max-width: 100%; margin: 0; min-width: 0; overflow-x: hidden; }
+    .topbar { position: sticky; top: 0; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; gap: 22px; min-width: 0; max-width: 100%; padding: 14px 28px; color: white; background: #17365d; box-shadow: 0 2px 8px #0003; }
+    .topbar > * { min-width: 0; }
     .system-title { font-size: 19px; font-weight: 700; }
     .module-title { padding: 5px 12px; border-radius: 4px; background: #28578e; }
-    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 28px; background: #fff; border-bottom: 1px solid #d8dee8; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; min-width: 0; max-width: 100%; padding: 10px 28px; background: #fff; border-bottom: 1px solid #d8dee8; }
+    .toolbar > span { flex: 1 1 100%; min-width: 0; overflow-wrap: anywhere; }
     button, select, input, textarea { font: inherit; }
     button { cursor: pointer; border: 1px solid #9eacc0; border-radius: 4px; padding: 6px 12px; background: #fff; }
     button.primary { color: white; border-color: #1769aa; background: #1769aa; }
@@ -19,17 +22,18 @@
     button.icon-danger { padding: 2px 8px; color: #a02626; border-color: #e3aaaa; }
     .state-banner { display: none; margin: 16px 28px 0; padding: 12px 16px; border-radius: 4px; color: #7b1e1e; background: #ffe2e2; }
     .state-banner.visible { display: block; }
-    .layout { width: 1020px; margin: 18px auto 80px; }
+    .layout { width: calc(100% - 32px); max-width: 1020px; margin: 18px auto 80px; }
     .section { margin: 16px 0; padding: 20px 24px 26px; background: #fff; border: 1px solid #d8dee8; border-radius: 6px; box-shadow: 0 1px 2px #2233440a; }
     .section h2 { margin: 0 0 18px; padding-bottom: 10px; color: #17365d; font-size: 18px; border-bottom: 2px solid #e5ebf2; }
-    .field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 26px; }
-    .field { display: grid; grid-template-columns: 170px 1fr; align-items: center; min-height: 38px; gap: 10px; }
+    .field-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px 26px; min-width: 0; }
+    .field { display: grid; grid-template-columns: minmax(110px, 170px) minmax(0, 1fr); align-items: center; min-width: 0; min-height: 38px; gap: 10px; }
     .field.full { grid-column: 1 / -1; }
     .field > label { color: #4a5664; text-align: right; }
     input, select, textarea { width: 100%; min-height: 32px; padding: 5px 8px; border: 1px solid #aeb9c7; border-radius: 4px; background: #fff; }
+    .radio-row input[type="radio"], .field > label input[type="checkbox"] { width: auto; min-width: 16px; min-height: 16px; padding: 0; margin: 0 6px 0 0; border: 0; border-radius: 0; accent-color: #1769aa; }
     input:focus, select:focus, textarea:focus { outline: 2px solid #8fc5ee; border-color: #1769aa; }
     textarea { min-height: 76px; resize: vertical; }
-    .radio-row { display: flex; gap: 24px; align-items: center; }
+    .radio-row { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; min-width: 0; min-height: 32px; }
     .radio-row label { color: #182230; }
     .hint { margin: -8px 0 14px; color: #697586; font-size: 13px; }
     .readonly { padding: 11px 12px; min-height: 54px; white-space: pre-wrap; border: 1px dashed #aeb9c7; border-radius: 4px; background: #f8fafc; }
@@ -39,7 +43,7 @@
     th { color: #4a5664; background: #f1f5f9; }
     tbody tr:last-child td { border-bottom: 0; }
     .section-actions { display: flex; gap: 8px; margin: 10px 0; }
-    .subgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+    .subgrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px 24px; min-width: 0; }
     .subgrid .field { grid-template-columns: 150px 1fr; }
     .attachment { display: flex; gap: 18px; align-items: center; padding: 10px 12px; border: 1px solid #d8dee8; border-radius: 4px; }
     .attachment a { color: #1769aa; }
@@ -68,6 +72,8 @@
     <button type="button" data-state="loading">页面加载中</button>
     <button type="button" data-state="validation_failed">校验失败</button>
     <button type="button" data-state="modal">弹窗遮挡</button>
+    <button type="button" id="blank-record">空白新记录</button>
+    <button type="button" id="conflict-record">载入冲突样例</button>
     <span>这些按钮只用于验证识别器的安全停机。</span>
   </div>
   <div id="state-banner" class="state-banner" role="alert"></div>
@@ -77,11 +83,11 @@
       <h2>基本信息</h2>
       <div class="field-grid">
         <div class="field"><label for="patent-status">专利状态</label><select id="patent-status" data-m2-id="patent_status"><option>待审核</option><option selected>授权</option><option>失效</option></select></div>
-        <div class="field"><label for="patent-no">专利号</label><input id="patent-no" data-m2-id="patent_no" value="2018106374980"></div>
-        <div class="field full"><label for="application-title">申请名称</label><input id="application-title" data-m2-id="application_title" value="一种柔性光伏支架抗风稳定装置、柔性光伏支架及光伏系统"></div>
-        <div class="field"><label>申请类型</label><div class="radio-row" data-m2-id="patent_type"><label><input type="radio" name="patent-type" checked> 实用新型</label><label><input type="radio" name="patent-type"> 发明</label></div></div>
-        <div class="field"><label for="application-date">申请受理日</label><input id="application-date" type="date" data-m2-id="application_date" value="2018-06-20"></div>
-        <div class="field"><label for="grant-date">授权公告日</label><input id="grant-date" type="date" data-m2-id="grant_date" value="2025-03-04"></div>
+        <div class="field"><label for="patent-no">专利号</label><input id="patent-no" data-m2-id="patent_no"></div>
+        <div class="field full"><label for="application-title">申请名称</label><input id="application-title" data-m2-id="application_title"></div>
+        <div class="field"><label>申请类型</label><div class="radio-row" data-m2-id="patent_type"><label><input type="radio" name="patent-type" value="实用新型"> 实用新型</label><label><input type="radio" name="patent-type" value="发明"> 发明</label></div></div>
+        <div class="field"><label for="application-date">申请受理日</label><input id="application-date" type="date" data-m2-id="application_date"></div>
+        <div class="field"><label for="grant-date">授权公告日</label><input id="grant-date" type="date" data-m2-id="grant_date"></div>
         <div class="field"><label><input type="checkbox" data-m2-id="joint_application"> 联合申请</label><span class="hint">人工/配置确认，不从证书猜填</span></div>
       </div>
     </section>
@@ -89,10 +95,10 @@
     <section class="section" data-m2-anchor="technical_summary">
       <h2>技术摘要</h2>
       <p class="hint">摘要内容属于说明书/业务模板字段，M2 只验证编辑入口和回读，不自动猜填。</p>
-      <div id="summary-readonly" class="readonly">当前摘要：用于现场验证编辑入口、长文本回读和编辑态保护。</div>
+      <div id="summary-readonly" class="readonly">当前摘要：未填写</div>
       <div id="summary-editor" hidden>
         <label for="summary-text">技术摘要内容</label>
-        <textarea id="summary-text" data-m2-id="summary_text">用于现场验证编辑入口、长文本回读和编辑态保护。</textarea>
+        <textarea id="summary-text" data-m2-id="summary_text"></textarea>
       </div>
       <div class="section-actions"><button id="summary-edit" type="button" data-m2-id="summary_edit">编辑</button><span id="edit-state">当前为只读态</span></div>
     </section>
@@ -112,9 +118,7 @@
       <h3 data-m2-anchor="rights_holder_table">专利权人表</h3>
       <div class="section-actions"><button id="add-holder" type="button" data-m2-id="rights_holder_add">新增权利人</button><span>默认不删除已有行，新增后需核对行数与顺序。</span></div>
       <div class="table-wrap">
-        <table id="holders-table" data-m2-id="rights_holder_rows"><thead><tr><th>序号</th><th>单位名称</th><th>操作</th></tr></thead><tbody>
-          <tr><td>1</td><td><input value="华电科工股份有限公司"></td><td><button type="button" class="icon-danger delete-row" data-danger="true">删除</button></td></tr>
-        </tbody></table>
+        <table id="holders-table" data-m2-id="rights_holder_rows"><thead><tr><th>序号</th><th>单位名称</th><th>操作</th></tr></thead><tbody><tr class="empty-row"><td colspan="3">暂无数据</td></tr></tbody></table>
       </div>
 
       <h3 data-m2-anchor="first_inventor">第一发明人</h3>
@@ -127,14 +131,11 @@
       <h3 data-m2-anchor="inventor_table">发明人（含第一发明人）</h3>
       <div class="section-actions"><button id="add-inventor" type="button" data-m2-id="inventor_add">新增发明人</button><span>删除控件仅用于展示保护边界，自动化不得点击。</span></div>
       <div class="table-wrap">
-        <table id="inventors-table" data-m2-id="inventor_rows"><thead><tr><th>序号</th><th>姓名</th><th>操作</th></tr></thead><tbody>
-          <tr><td>1</td><td><input value="张三"></td><td><button type="button" class="icon-danger delete-row" data-danger="true">删除</button></td></tr>
-          <tr><td>2</td><td><input value="李四"></td><td><button type="button" class="icon-danger delete-row" data-danger="true">删除</button></td></tr>
-        </tbody></table>
+        <table id="inventors-table" data-m2-id="inventor_rows"><thead><tr><th>序号</th><th>姓名</th><th>操作</th></tr></thead><tbody><tr class="empty-row"><td colspan="3">暂无数据</td></tr></tbody></table>
       </div>
       <div class="subgrid" style="margin-top:16px">
-        <div class="field"><label for="patentee-merge">专利权人合并</label><input id="patentee-merge" data-m2-id="patentee_merge" value="华电科工股份有限公司"></div>
-        <div class="field"><label for="inventor-merge">发明人合并</label><input id="inventor-merge" data-m2-id="inventor_merge" value="张三；李四"></div>
+        <div class="field"><label for="patentee-merge">专利权人合并</label><input id="patentee-merge" data-m2-id="patentee_merge"></div>
+        <div class="field"><label for="inventor-merge">发明人合并</label><input id="inventor-merge" data-m2-id="inventor_merge"></div>
       </div>
     </section>
 
@@ -190,6 +191,8 @@
       const banner = document.querySelector('#state-banner');
       const toast = document.querySelector('#toast');
       const overlay = document.querySelector('#person-overlay');
+      const personSearch = document.querySelector('#person-search');
+      const peopleList = document.querySelector('#people-list');
       const summaryEditor = document.querySelector('#summary-editor');
       const summaryReadonly = document.querySelector('#summary-readonly');
       const editState = document.querySelector('#edit-state');
@@ -203,13 +206,53 @@
         summaryEditor.hidden = !editing; summaryReadonly.hidden = editing; editState.textContent = editing ? '编辑中' : '当前为只读态';
       });
       const renumber = (table) => [...table.querySelectorAll('tbody tr')].forEach((row, index) => row.children[0].textContent = String(index + 1));
-      const addRow = (tableId, value) => { const table = document.querySelector(tableId); const row = document.createElement('tr'); row.innerHTML = `<td></td><td><input value="${value}"></td><td><button type="button" class="icon-danger delete-row" data-danger="true">删除</button></td>`; table.querySelector('tbody').appendChild(row); renumber(table); };
+      const addRow = (tableId, value) => { const table = document.querySelector(tableId); table.querySelector('.empty-row')?.remove(); const row = document.createElement('tr'); row.innerHTML = `<td></td><td><input value="${value}"></td><td><button type="button" class="icon-danger delete-row" data-danger="true">删除</button></td>`; table.querySelector('tbody').appendChild(row); renumber(table); };
       document.querySelector('#add-holder').addEventListener('click', () => addRow('#holders-table', '待填写权利人'));
       document.querySelector('#add-inventor').addEventListener('click', () => addRow('#inventors-table', '待填写发明人'));
-      document.querySelectorAll('.delete-row').forEach((button) => button.addEventListener('click', () => showToast('模拟页：删除动作需要人工确认，自动化不会执行。')));
+      document.addEventListener('click', (event) => { if (event.target.matches('.delete-row')) showToast('模拟页：删除动作需要人工确认，自动化不会执行。'); });
       document.querySelector('#select-person').addEventListener('click', () => { overlay.classList.add('visible'); body.dataset.pageState = 'modal'; });
       document.querySelector('#close-person').addEventListener('click', () => { overlay.classList.remove('visible'); body.dataset.pageState = 'ready'; });
-      document.querySelectorAll('[data-person]').forEach((button) => button.addEventListener('click', () => { document.querySelector('#selected-person').textContent = `已选择：${button.dataset.person}`; overlay.classList.remove('visible'); body.dataset.pageState = 'ready'; }));
+      const renderPeople = (query = '') => {
+        const base = ['张三', '李四'];
+        const matches = base.filter((name) => name.includes(query));
+        if (query && matches.length === 0) matches.push(query);
+        peopleList.replaceChildren(...matches.map((name, index) => {
+          const row = document.createElement('div'); row.className = 'person';
+          const label = document.createElement('span'); label.textContent = `${name}（测试人员库 / ${1001 + index}）`;
+          const button = document.createElement('button'); button.type = 'button'; button.dataset.person = name; button.textContent = '选择';
+          row.append(label, button); return row;
+        }));
+      };
+      personSearch.addEventListener('input', () => renderPeople(personSearch.value.trim()));
+      peopleList.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-person]'); if (!button) return;
+        document.querySelector('#selected-person').textContent = `已选择：${button.dataset.person}`;
+        overlay.classList.remove('visible'); body.dataset.pageState = 'ready';
+      });
+      const blankRecord = () => {
+        document.querySelectorAll('input:not([type="radio"]):not([type="checkbox"]), textarea').forEach((input) => { input.value = ''; });
+        document.querySelectorAll('input[type="radio"], input[type="checkbox"]').forEach((input) => { input.checked = false; });
+        document.querySelector('#pct-count').selectedIndex = 0;
+        document.querySelector('#holders-table tbody').innerHTML = '<tr class="empty-row"><td colspan="3">暂无数据</td></tr>';
+        document.querySelector('#inventors-table tbody').innerHTML = '<tr class="empty-row"><td colspan="3">暂无数据</td></tr>';
+        document.querySelector('#selected-person').textContent = '尚未选择（姓名需要唯一匹配）';
+        summaryReadonly.textContent = '当前摘要：未填写'; summaryEditor.hidden = true; summaryReadonly.hidden = false;
+        body.dataset.editState = 'read_only'; editState.textContent = '当前为只读态';
+        body.dataset.pageState = 'ready'; banner.textContent = ''; banner.classList.remove('visible');
+        renderPeople(); showToast('已恢复为空白新记录');
+      };
+      document.querySelector('#blank-record').addEventListener('click', blankRecord);
+      document.querySelector('#conflict-record').addEventListener('click', () => {
+        blankRecord();
+        document.querySelector('#patent-no').value = '2018106374980';
+        document.querySelector('#application-title').value = '一种柔性光伏支架抗风稳定装置、柔性光伏支架及光伏系统';
+        document.querySelector('input[name="patent-type"][value="实用新型"]').checked = true;
+        document.querySelector('#application-date').value = '2018-06-20'; document.querySelector('#grant-date').value = '2025-03-04';
+        addRow('#holders-table', '华电科工股份有限公司'); addRow('#inventors-table', '张三'); addRow('#inventors-table', '李四');
+        document.querySelector('#patentee-merge').value = '华电科工股份有限公司'; document.querySelector('#inventor-merge').value = '张三；李四';
+        showToast('已载入用于安全停机测试的冲突样例');
+      });
+      renderPeople();
       document.querySelectorAll('[data-action]').forEach((link) => link.addEventListener('click', (event) => { event.preventDefault(); showToast(`${link.dataset.action === 'preview' ? '预览' : '下载'}动作仅供核验`); }));
       document.querySelector('#save-button').addEventListener('click', () => showToast('M2 安全边界：不自动执行保存，请人工确认。'));
       document.querySelector('#return-button').addEventListener('click', () => showToast('M2 安全边界：返回动作需要人工确认。'));

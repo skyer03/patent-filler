@@ -12,6 +12,7 @@ from .certificate import CertificateParser, ParseError
 from .ocr import OcrUnavailableError
 from .domain import REQUIRED_FIELDS
 from .jsonio import export_drafts, import_drafts
+from .version import APP_VERSION
 
 
 DEFAULT_PROFILE_PATH = Path(__file__).resolve().parents[1] / "PROJECT_PLAN_M2_PROFILE.json"
@@ -78,7 +79,15 @@ def golden_regression(source: Path, golden_dir: Path) -> int:
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="专利证书解析与屏幕自动化工具")
-    commands = parser.add_subparsers(dest="command", required=True)
+    parser.add_argument("--version", action="version", version=APP_VERSION)
+    parser.add_argument("--native-host", action="store_true", help=argparse.SUPPRESS)
+    parser.add_argument(
+        "--native-store",
+        type=Path,
+        default=Path(".m6") / "dom-bridge",
+        help=argparse.SUPPRESS,
+    )
+    commands = parser.add_subparsers(dest="command", required=False)
     parse = commands.add_parser("parse", help="解析单个 PDF 并输出 JSON")
     parse.add_argument("pdf", type=Path)
     parse.add_argument("--output", type=Path)
@@ -148,6 +157,46 @@ def build_parser() -> argparse.ArgumentParser:
     m6_package = commands.add_parser("m6-package", help="构建 M6 离线安装与运维包")
     m6_package.add_argument("--output", type=Path, default=Path("build") / "m6_offline_package.zip")
     m6_package.add_argument("--root", type=Path, help="项目根目录，默认使用当前项目")
+    m7 = commands.add_parser("m7", help="统一桌面入口；默认启动 M7 任务界面")
+    m7.add_argument("source", type=Path, nargs="?", help="单个 PDF/JSON 或包含 PDF/JSON 的目录")
+    m7.add_argument(
+        "--mode",
+        choices=("auto_update", "simulation", "recognition_only", "step", "controlled_batch"),
+        default="simulation",
+    )
+    m7.add_argument("--image", type=Path, help="现场截图；只识别/单步模式可用")
+    m7.add_argument("--actions", type=Path, help="单步动作 JSON")
+    m7.add_argument("--manual", type=Path, help="人工/配置字段 JSON")
+    m7.add_argument("--window-title", help="绑定已打开的 Edge/Chrome 窗口标题")
+    m7.add_argument("--queue", type=Path, default=Path(".m6") / "queue.json")
+    m7.add_argument("--diagnostics", type=Path, help="诊断 JSON 文件或目录")
+    m7.add_argument("--annotated", type=Path, help="只识别模式的标注截图")
+    m7.add_argument("--output", type=Path, help="输出 M7 报告 JSON")
+    m7.add_argument("--limit", type=int, help="受控批量最多处理的任务数")
+    m7.add_argument("--yes", action="store_true", help="单步模式跳过逐动作确认；仅用于明确授权的现场运行")
+    m7.add_argument("--headless", action="store_true", help="不启动桌面界面，直接运行指定模式")
+    m7_package = commands.add_parser("m7-package", help="构建最终 M7 离线安装与运维包")
+    m7_package.add_argument("--output", type=Path, default=Path("build") / "m7_offline_package.zip")
+    m7_package.add_argument("--root", type=Path, help="项目根目录，默认使用当前项目")
+    dom = commands.add_parser("dom", help="准备或查看 Edge 扩展的本地已审核任务")
+    dom_commands = dom.add_subparsers(dest="dom_action", required=True)
+    dom_prepare = dom_commands.add_parser("prepare", help="将一份已复核 PDF/JSON 准备为扩展任务")
+    dom_prepare.add_argument("source", type=Path)
+    dom_prepare.add_argument("--manual", type=Path, help="人工/配置字段 JSON")
+    dom_prepare.add_argument("--store", type=Path, default=Path(".m6") / "dom-bridge")
+    dom_prepare.add_argument("--profile-version", default="dom-poc-v1")
+    dom_prepare.add_argument(
+        "--include-complex",
+        action="store_true",
+        help="仅在动态表格和人员选择器已完成 DOM Profile 校准后启用",
+    )
+    dom_prepare.add_argument(
+        "--allow-overwrite",
+        action="store_true",
+        help="允许扩展覆盖当前页面的非空字段；仍不会保存、提交、返回或删除",
+    )
+    dom_status = dom_commands.add_parser("status", help="查看扩展任务及逐字段结果")
+    dom_status.add_argument("--store", type=Path, default=Path(".m6") / "dom-bridge")
     mock_site = commands.add_parser("mock-site", help="启动离线 M2 仿真网页")
     mock_site.add_argument("--port", type=int, default=8765)
     mock_site.add_argument("--open", action="store_true", dest="open_browser", help="启动后打开默认浏览器")
@@ -167,6 +216,24 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: list[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    if args.native_host:
+        from .dom_bridge import NativeMessageHost, TaskStore
+
+        return NativeMessageHost(TaskStore(args.native_store)).serve()
+    if args.command is None:
+        from .m7_ui import launch
+
+        try:
+            launch()
+        except Exception as error:
+            if error.__class__.__name__ == "TclError":
+                print(
+                    "错误：当前 Python 的 Tcl/Tk 桌面组件不可用。请修复或重新安装带 Tcl/Tk 的官方 Windows Python 后再运行 python -m app。",
+                    file=sys.stderr,
+                )
+                return 2
+            raise
+        return 0
     if args.command == "ui":
         from .ui import launch
 
@@ -243,6 +310,140 @@ def main(argv: list[str] | None = None) -> int:
         target = build_m6_package(args.output, args.root)
         print(json.dumps({"status": "completed", "package": str(target)}, ensure_ascii=False))
         return 0
+    if args.command == "m7-package":
+        from .m7_package import build_m7_package
+
+        target = build_m7_package(args.output, args.root)
+        print(json.dumps({"status": "completed", "package": str(target)}, ensure_ascii=False))
+        return 0
+    if args.command == "dom":
+        from .dom_bridge import DomBridgeError, TaskStore
+        from .m7 import load_workflow_sources
+
+        try:
+            store = TaskStore(args.store)
+            if args.dom_action == "prepare":
+                drafts = load_workflow_sources(args.source)
+                if len(drafts) != 1:
+                    raise DomBridgeError("Edge 扩展任务每次只接受一份证书。")
+                manual = (
+                    json.loads(args.manual.read_text(encoding="utf-8"))
+                    if args.manual is not None
+                    else None
+                )
+                task = store.prepare(
+                    drafts[0],
+                    manual,
+                    profile_version=args.profile_version,
+                    include_complex=args.include_complex,
+                    allow_overwrite=args.allow_overwrite,
+                )
+                output_data: object = {
+                    "status": "ready_for_fill",
+                    "task_id": task["task_id"],
+                    "profile_version": task["profile_version"],
+                    "field_count": len(task["fields"]),
+                    "store": str(store.root),
+                }
+            else:
+                output_data = store.status()
+            print(json.dumps(output_data, ensure_ascii=False, indent=2))
+            return 0
+        except (DomBridgeError, OSError, ValueError, json.JSONDecodeError) as error:
+            print(f"错误：{error}", file=sys.stderr)
+            return 2
+    if args.command == "m7":
+        if not args.headless and not any((args.source, args.image, args.actions, args.manual, args.window_title)):
+            from .m7_ui import launch
+
+            try:
+                launch()
+            except Exception as error:
+                if error.__class__.__name__ == "TclError":
+                    print(
+                        "错误：当前 Python 的 Tcl/Tk 桌面组件不可用。请修复或重新安装带 Tcl/Tk 的官方 Windows Python 后再运行 python -m app。",
+                        file=sys.stderr,
+                    )
+                    return 2
+                raise
+            return 0
+        from .automation import Action
+        from .m5 import load_actions
+        from .m7 import M7Error, M7Mode, M7Service, load_workflow_sources
+
+        try:
+            service = M7Service(queue_path=args.queue)
+            if args.window_title:
+                service.bind_window(args.window_title)
+            manual = None
+            if args.manual:
+                manual = json.loads(args.manual.read_text(encoding="utf-8"))
+            if args.mode == M7Mode.AUTO_UPDATE.value:
+                if args.source is None or not args.window_title:
+                    raise M7Error("auto_update 模式需要单份 PDF/JSON 和 --window-title。")
+                drafts = load_workflow_sources(args.source)
+                if len(drafts) != 1:
+                    raise M7Error("auto_update 模式每次只能处理一份证书。")
+                report = service.run_auto_update(drafts[0], manual, diagnostics=args.diagnostics)
+                output_data, ok = report.to_dict(), report.status == "completed" and report.verified
+            elif args.mode == M7Mode.SIMULATION.value:
+                if args.source is None:
+                    raise M7Error("simulation 模式需要 PDF/JSON 草稿或目录。")
+                drafts = load_workflow_sources(args.source)
+                reports = [
+                    service.run_simulation(draft, manual, diagnostics=args.diagnostics)
+                    for draft in drafts
+                ]
+                output_data: object = reports[0].to_dict() if len(reports) == 1 else {
+                    "format": "m7-unified-reports-v1",
+                    "mode": args.mode,
+                    "reports": [item.to_dict() for item in reports],
+                }
+                ok = all(item.status == "completed" for item in reports)
+            elif args.mode == M7Mode.RECOGNITION_ONLY.value:
+                report = service.run_recognition_only(
+                    image=args.image,
+                    annotated=args.annotated,
+                    diagnostics=args.diagnostics,
+                )
+                output_data, ok = report.to_dict(), report.status == "recognized"
+            elif args.mode == M7Mode.STEP.value:
+                if args.actions is None:
+                    raise M7Error("step 模式需要 --actions 动作 JSON。")
+                actions = load_actions(args.actions)
+
+                def confirm(action: Action) -> bool:
+                    if args.yes:
+                        return True
+                    answer = input(f"确认执行 {action.control_id} ({action.kind})? [y/N] ")
+                    return answer.strip().casefold() in {"y", "yes"}
+
+                report = service.run_step(
+                    actions,
+                    image=args.image,
+                    confirm=confirm,
+                    diagnostics=args.diagnostics,
+                )
+                output_data, ok = report.to_dict(), report.status == "completed"
+            else:
+                if args.source is not None:
+                    sources = (
+                        sorted([*args.source.glob("*.pdf"), *args.source.glob("*.json")])
+                        if args.source.is_dir()
+                        else [args.source]
+                    )
+                    service.enqueue(sources)
+                report = service.run_controlled_batch(manual, diagnostics=args.diagnostics, limit=args.limit)
+                output_data, ok = report.to_dict(), report.status == "completed"
+            output = json.dumps(output_data, ensure_ascii=False, indent=2) + "\n"
+            if args.output is None:
+                print(output, end="")
+            else:
+                args.output.write_text(output, encoding="utf-8")
+            return 0 if ok else 4
+        except (M7Error, OSError, ValueError, json.JSONDecodeError) as error:
+            print(f"错误：{error}", file=sys.stderr)
+            return 2
     if args.command == "m6":
         from .m6 import BackupManager, TaskQueue
 

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>专利证书安全预填</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main>
+    <h1>专利证书安全预填</h1>
+    <p class="boundary">只处理当前页面；覆盖模式仅在桌面程序人工确认后生效，永不点击保存、提交、返回或删除。</p>
+    <div class="actions">
+      <button id="load">读取当前任务</button>
+      <button id="start" class="primary" disabled>开始预填</button>
+      <button id="stop" class="danger">安全停止</button>
+      <button id="calibrate">导出脱敏 DOM 校准</button>
+    </div>
+    <section>
+      <h2>当前状态</h2>
+      <div id="status" role="status">尚未读取任务。</div>
+      <pre id="details"></pre>
+    </section>
+  </main>
+  <script src="popup.js"></script>
+</body>
+</html>

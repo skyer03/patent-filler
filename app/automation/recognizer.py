@@ -10,9 +10,11 @@ from __future__ import annotations
 
 import re
 import shutil
+import os
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Iterable, Protocol
+from collections.abc import Iterable, Mapping, Sequence
+from typing import Protocol
 
 from PIL import Image, ImageOps
 
@@ -195,6 +197,149 @@ class TesseractTextDetector:
                 return
 
 
+class PaddleTextDetector:
+    """Local PaddleOCR adapter used by the screen and PDF OCR paths.
+
+    The model directories are intentionally passed to Paddle as relative paths.
+    Paddle's Windows native predictor has trouble opening model files through a
+    non-ASCII absolute path, while the project itself may live in a Chinese
+    directory.  The launcher therefore starts from the project root.
+    """
+
+    DET_MODEL_NAME = "PP-OCRv6_medium_det"
+    REC_MODEL_NAME = "PP-OCRv5_server_rec"
+
+    def __init__(
+        self,
+        model_root: str | Path = Path("resources") / "ocr_models" / "paddle",
+        cache_dir: str | Path = Path(".runtime") / "paddle_cache",
+        device: str = "cpu",
+        min_confidence: float = 0.0,
+    ) -> None:
+        self.model_root = Path(model_root)
+        self.cache_dir = Path(cache_dir)
+        self.device = device
+        self.min_confidence = min_confidence
+        self._ocr = None
+
+    def detect(self, image: Image.Image) -> list[TextObservation]:
+        ocr = self._get_ocr()
+        try:
+            import numpy as np
+
+            results = ocr.predict(np.asarray(image.convert("RGB")))
+            observations: list[TextObservation] = []
+            for result in results:
+                payload = getattr(result, "json", None)
+                if isinstance(payload, Mapping):
+                    payload = payload.get("res", payload)
+                elif isinstance(result, Mapping):
+                    payload = result
+                else:
+                    payload = {}
+                if not isinstance(payload, Mapping):
+                    continue
+                texts = payload.get("rec_texts", [])
+                scores = payload.get("rec_scores", [])
+                boxes = payload.get("rec_boxes") or payload.get("rec_polys", [])
+                for index, raw_text in enumerate(texts):
+                    text = str(raw_text).strip()
+                    if not text:
+                        continue
+                    try:
+                        confidence = max(0.0, min(1.0, float(scores[index])))
+                        box = self._to_box(boxes[index])
+                    except (IndexError, TypeError, ValueError):
+                        continue
+                    if confidence < self.min_confidence or box is None:
+                        continue
+                    observations.append(TextObservation(text, box, confidence))
+            return observations
+        except RecognitionError:
+            raise
+        except Exception as error:  # pragma: no cover - native runtime dependent
+            raise RecognitionError(f"PaddleOCR 推理失败：{error}") from error
+
+    def _get_ocr(self):
+        if self._ocr is not None:
+            return self._ocr
+        det_dir = self._model_dir(self.DET_MODEL_NAME)
+        rec_dir = self._model_dir(self.REC_MODEL_NAME)
+        if not (det_dir / "inference.json").is_file() or not (rec_dir / "inference.json").is_file():
+            raise RecognitionError(
+                "PaddleOCR 本地模型未找到：请确认 resources/ocr_models/paddle 已完整安装。"
+            )
+        cache_dir = self.cache_dir if self.cache_dir.is_absolute() else Path.cwd() / self.cache_dir
+        cache_dir.mkdir(parents=True, exist_ok=True)
+        os.environ.setdefault("PADDLE_PDX_CACHE_HOME", str(cache_dir))
+        os.environ.setdefault("PADDLE_PDX_MODEL_SOURCE", "BOS")
+        os.environ.setdefault("PADDLE_PDX_DISABLE_MODEL_SOURCE_CHECK", "True")
+        try:
+            import paddle
+
+            # The Windows CPU oneDNN path currently cannot consume this PIR
+            # model reliably; the plain CPU predictor is stable and local.
+            paddle.set_flags({"FLAGS_use_mkldnn": False})
+            from paddleocr import PaddleOCR
+
+            self._ocr = PaddleOCR(
+                text_detection_model_name=self.DET_MODEL_NAME,
+                text_detection_model_dir=self._paddle_path(det_dir),
+                text_recognition_model_name=self.REC_MODEL_NAME,
+                text_recognition_model_dir=self._paddle_path(rec_dir),
+                use_doc_orientation_classify=False,
+                use_doc_unwarping=False,
+                use_textline_orientation=False,
+                device=self.device,
+                enable_mkldnn=False,
+            )
+            return self._ocr
+        except RecognitionError:
+            raise
+        except ImportError as error:  # pragma: no cover - bundled runtime dependent
+            raise RecognitionError(
+                "PaddleOCR 本地运行时不可用：请使用随项目提供的 Python 运行时。"
+            ) from error
+        except Exception as error:  # pragma: no cover - native runtime dependent
+            raise RecognitionError(f"PaddleOCR 初始化失败：{error}") from error
+
+    def _model_dir(self, name: str) -> Path:
+        path = self.model_root / name
+        return path if path.is_absolute() else Path.cwd() / path
+
+    @staticmethod
+    def _paddle_path(path: Path) -> str:
+        try:
+            return path.relative_to(Path.cwd()).as_posix()
+        except ValueError:
+            return str(path)
+
+    @staticmethod
+    def _to_box(raw_box) -> BoundingBox | None:
+        values = raw_box.tolist() if hasattr(raw_box, "tolist") else raw_box
+        if not isinstance(values, Sequence) or len(values) < 4:
+            return None
+        if all(isinstance(item, (int, float)) for item in values[:4]):
+            left, top, right, bottom = values[:4]
+        else:
+            points = [point for point in values if isinstance(point, Sequence) and len(point) >= 2]
+            if not points:
+                return None
+            left = min(point[0] for point in points)
+            top = min(point[1] for point in points)
+            right = max(point[0] for point in points)
+            bottom = max(point[1] for point in points)
+        return BoundingBox(int(left), int(top), int(right), int(bottom))
+
+
+def create_default_text_detector() -> TextDetector:
+    """Build the configured local OCR engine without importing heavy packages."""
+
+    if os.environ.get("M7_OCR_ENGINE", "paddle").strip().casefold() == "tesseract":
+        return TesseractTextDetector()
+    return PaddleTextDetector()
+
+
 def _normalise(text: str) -> str:
     return re.sub(r"\s+", "", text).replace("：", ":").casefold()
 
@@ -206,7 +351,31 @@ def _matches(observed: str, expected: str) -> bool:
 
 
 def _best_observation(observations: Iterable[TextObservation], text: str) -> TextObservation | None:
-    candidates = [item for item in observations if _matches(item.text, text)]
+    items = list(observations)
+    candidates = [item for item in items if _matches(item.text, text)]
+    target = _normalise(text)
+    # OCR may split a short Chinese heading into adjacent observations, for
+    # example ``补充`` and ``附件``.  Join only same-line, horizontally
+    # adjacent tokens so this remains a geometric match rather than a guess.
+    for left in items:
+        for right in items:
+            if left is right or right.box.left < left.box.left:
+                continue
+            line_gap = abs(left.box.top - right.box.top)
+            max_height = max(left.box.height, right.box.height, 1)
+            horizontal_gap = right.box.left - left.box.right
+            if line_gap > max(12, max_height) or horizontal_gap > max(24, max_height * 2):
+                continue
+            combined = _normalise(left.text + right.text)
+            if combined != target and not _matches(combined, text):
+                continue
+            box = BoundingBox(
+                min(left.box.left, right.box.left),
+                min(left.box.top, right.box.top),
+                max(left.box.right, right.box.right),
+                max(left.box.bottom, right.box.bottom),
+            )
+            candidates.append(TextObservation(left.text + right.text, box, min(left.confidence, right.confidence)))
     return max(candidates, key=lambda item: item.confidence, default=None)
 
 
@@ -234,7 +403,7 @@ class AnchorRecognizer:
 
     def __init__(self, profile: PageProfile, ocr: TextDetector | None = None, threshold: float = 0.72) -> None:
         self.profile = profile
-        self.ocr = ocr or TesseractTextDetector()
+        self.ocr = ocr or create_default_text_detector()
         self.threshold = threshold
 
     def recognize_image(self, image: Image.Image) -> RecognitionResult:
@@ -258,7 +427,12 @@ class AnchorRecognizer:
         result = RecognitionResult(self.profile.id, methods=[method])
         for anchor_spec in self.profile.anchors:
             match = _best_observation(items, anchor_spec.text)
-            if match is None or match.confidence < self.threshold:
+            threshold = (
+                anchor_spec.min_confidence
+                if anchor_spec.min_confidence is not None
+                else self.threshold
+            )
+            if match is None or match.confidence < threshold:
                 if anchor_spec.required or anchor_spec.id in self.profile.minimum_anchors:
                     result.missing_anchors.append(anchor_spec.id)
                 continue
@@ -272,11 +446,26 @@ class AnchorRecognizer:
             "校验失败": "validation_failed",
             "弹窗遮挡": "modal",
         }
+        state_candidates = [
+            item
+            for item in items
+            if any(_normalise(item.text).startswith(_normalise(keyword)) for keyword in state_keywords)
+        ]
+        # The offline mock page keeps all state-test buttons visible in one
+        # toolbar.  Their labels are not the current page state.  Ignore a
+        # same-row cluster of three or more state labels, while preserving a
+        # genuine error marker elsewhere on the page.
         state_match = next(
             (
                 item
-                for item in items
-                if any(_normalise(item.text).startswith(_normalise(keyword)) for keyword in state_keywords)
+                for item in state_candidates
+                if sum(
+                    1
+                    for other in state_candidates
+                    if abs(other.box.top - item.box.top)
+                    <= max(24, item.box.height, other.box.height)
+                )
+                < 3
             ),
             None,
         )

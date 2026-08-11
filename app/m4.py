@@ -141,6 +141,7 @@ class M4Report:
     reason: str | None = None
     diagnostics_path: str | None = None
     save_attempted: bool = False
+    trace: list[dict[str, object]] = field(default_factory=list)
 
     @property
     def verified(self) -> bool:
@@ -178,6 +179,7 @@ class M4Report:
             "reason": self.reason,
             "diagnostics_path": self.diagnostics_path,
             "save_attempted": self.save_attempted,
+            "trace": list(self.trace),
         }
 
 
@@ -228,6 +230,24 @@ def _web_patent_type(value: str) -> str:
     return {"invention": "发明", "utility_model": "实用新型"}.get(value, value)
 
 
+def _normalise_page_value(control_id: str, value: str) -> str:
+    normalized = " ".join(str(value).strip().split())
+    if control_id == "patent_no":
+        return _web_patent_no(normalized)
+    if control_id in {"application_date", "grant_date"}:
+        return normalized.replace("/", "-").replace(".", "-")
+    if control_id in {"patentee_merge", "inventor_merge"}:
+        return normalized.replace(";", "；").replace(" ", "")
+    return normalized
+
+
+def _is_empty_page_value(value: str | None) -> bool:
+    if value is None:
+        return True
+    normalized = "".join(str(value).strip().split())
+    return not normalized or normalized in {"请选择", "未选择", "尚未选择"} or normalized.startswith("尚未选择（")
+
+
 def _simulation_binding() -> WindowBinding:
     return WindowBinding(
         0,
@@ -244,6 +264,14 @@ def _default_adapter(draft: CertificateDraft, manual: ManualFields) -> InMemoryP
         for index, name in enumerate(draft.inventors, start=1)
     }
     return InMemoryPageAdapter(
+        values={
+            "patent_no": "",
+            "application_title": "",
+            "application_date": "",
+            "grant_date": "",
+            "summary_text": "",
+        },
+        selected_options={"patent_type": ""},
         tables={"rights_holder_rows": [], "inventor_rows": []},
         people=people,
         attachments=(AttachmentSnapshot(attachment_name, True, True),),
@@ -266,6 +294,8 @@ class M4Workflow:
         max_retries: int = 1,
         stop_requested: Callable[[], bool] | None = None,
         focus_ok: Callable[[], bool] | None = None,
+        on_action: Callable[[int, int, Action], None] | None = None,
+        verify_attachments: bool = True,
     ) -> None:
         self.profile = profile
         self.adapter_factory = adapter_factory
@@ -274,6 +304,8 @@ class M4Workflow:
         self.max_retries = max_retries
         self.stop_requested = stop_requested or (lambda: False)
         self.focus_ok = focus_ok or (lambda: True)
+        self.on_action = on_action
+        self.verify_attachments = verify_attachments
 
     def bind_window(self, title: str) -> WindowBinding:
         self.binding = self.binder.bind_by_title(title)
@@ -313,7 +345,7 @@ class M4Workflow:
             return self._finish(report, diagnostics)
 
         try:
-            report.actions = self._plan_actions(draft, manual, before)
+            report.actions = self.plan_actions(draft, manual, before)
         except M4PlanningError as error:
             report.status = "blocked"
             report.reason = str(error)
@@ -322,13 +354,33 @@ class M4Workflow:
 
         report.skipped_manual_fields = sorted(MANUAL_FIELDS - set(manual.values))
         report.phase = "automation"
+        action_index = 0
+
+        def before_action(action: Action) -> None:
+            nonlocal action_index
+            action_index += 1
+            if self.on_action is not None:
+                self.on_action(action_index, len(report.actions), action)
+
         report.automation = AutomationEngine(
             self.profile,
             page,
             max_retries=self.max_retries,
             stop_requested=self.stop_requested,
             focus_ok=self.focus_ok,
+            before_action=before_action,
         ).run(report.actions)
+        trace_event = getattr(page, "trace_event", None)
+        if callable(trace_event):
+            for step in report.automation.steps:
+                trace_event(
+                    "automation.verify",
+                    "passed" if step.verified else "failed",
+                    control_id=step.action.control_id,
+                    kind=step.action.kind,
+                    attempts=step.attempts,
+                    error_code=step.error_code,
+                )
         report.final_page = page.observe()
         if not report.automation.verified:
             report.status = report.automation.status
@@ -359,13 +411,32 @@ class M4Workflow:
 
         return self.run(draft, supplements, adapter=adapter, diagnostics=diagnostics)
 
+    def plan_actions(
+        self,
+        draft: CertificateDraft,
+        supplements: Mapping[str, object] | ManualFields | None,
+        before: PageSnapshot,
+    ) -> list[Action]:
+        """Build a conflict-aware public action plan from an observed page.
+
+        Empty fields are filled, matching fields are skipped, and a non-empty
+        different value blocks the run before input.  This is also what makes
+        an interrupted run safe to start again.
+        """
+
+        review = review_draft(draft)
+        if not review.approved:
+            raise M4PlanningError("证书草稿仍有待复核字段，不能自动填报。")
+        manual = supplements if isinstance(supplements, ManualFields) else ManualFields.from_mapping(supplements)
+        return self._plan_actions(draft, manual, before)
+
     def _plan_actions(
         self,
         draft: CertificateDraft,
         manual: ManualFields,
         before: PageSnapshot,
     ) -> list[Action]:
-        actions: list[Action] = [Action("basic_info", "scroll")]
+        actions: list[Action] = []
         values = {
             "patent_no": _web_patent_no(draft.patent_no or ""),
             "application_title": draft.title or "",
@@ -373,7 +444,7 @@ class M4Workflow:
             "application_date": draft.application_date or "",
             "grant_date": draft.grant_publication_date or "",
         }
-        actions.extend(Action(control_id, kind, value) for control_id, kind, value in (
+        basic_actions = self._difference_actions(before.values, before.selected_options, (
             ("patent_no", "fill", values["patent_no"]),
             ("application_title", "fill", values["application_title"]),
             ("patent_type", "select", values["patent_type"]),
@@ -383,26 +454,52 @@ class M4Workflow:
 
         if "joint_application" in manual.values:
             kind = "check" if manual.get("joint_application").casefold() in {"true", "1", "yes", "是"} else "uncheck"
-            actions.append(Action("joint_application", kind, manual.get("joint_application")))
+            desired = kind == "check"
+            current = before.checked.get("joint_application")
+            if current is None or current is not desired:
+                basic_actions.append(Action("joint_application", kind, manual.get("joint_application")))
+        if basic_actions:
+            actions.append(Action("basic_info", "scroll"))
+            actions.extend(basic_actions)
 
-        actions.append(Action("parties", "scroll"))
-        actions.extend(self._table_actions("rights_holder_rows", draft.current_patentees, before))
-        actions.extend(self._table_actions("inventor_rows", draft.inventors, before))
-        actions.append(Action("patentee_merge", "fill", "；".join(draft.current_patentees)))
-        actions.append(Action("inventor_merge", "fill", "；".join(draft.inventors)))
-        if before.selected_person != draft.inventors[0]:
-            actions.append(Action("first_inventor_select", "person", draft.inventors[0]))
+        party_actions = self._table_actions("rights_holder_rows", draft.current_patentees, before)
+        party_actions.extend(self._table_actions("inventor_rows", draft.inventors, before))
+        party_actions.extend(self._difference_actions(before.values, before.selected_options, (
+            ("patentee_merge", "fill", "；".join(draft.current_patentees)),
+            ("inventor_merge", "fill", "；".join(draft.inventors)),
+        )))
+        if before.selected_person is None:
+            party_actions.append(Action("first_inventor_select", "person", draft.inventors[0]))
+        elif _normalise_page_value("first_inventor_select", before.selected_person) != _normalise_page_value(
+            "first_inventor_select", draft.inventors[0]
+        ):
+            raise M4PlanningError("第一发明人已有值与确认草稿不一致，拒绝覆盖。")
 
-        if any(name in manual.values for name in ("summary_text", "benefit_efficiency", "benefit_reliability", "benefit_energy")):
-            actions.append(Action("technical_summary", "scroll"))
+        party_manual = tuple(
+            (name, "fill", manual.get(name))
+            for name in ("first_inventor_id", "first_inventor_contact")
+            if name in manual.values
+        )
+        party_actions.extend(self._difference_actions(before.values, before.selected_options, party_manual))
+        if party_actions:
+            actions.append(Action("parties", "scroll"))
+            actions.extend(party_actions)
+
+        summary_actions: list[Action] = []
         if "summary_text" in manual.values:
-            actions.extend((
-                Action("summary_edit", "edit"),
-                Action("summary_text", "fill", manual.get("summary_text")),
-            ))
+            fill_summary = self._difference_actions(
+                before.values, before.selected_options, (("summary_text", "fill", manual.get("summary_text")),)
+            )
+            if fill_summary:
+                summary_actions.extend((Action("summary_edit", "edit"), *fill_summary))
         for name in ("benefit_efficiency", "benefit_reliability", "benefit_energy"):
             if name in manual.values:
-                actions.append(Action(name, "fill", manual.get(name)))
+                summary_actions.extend(
+                    self._difference_actions(before.values, before.selected_options, ((name, "fill", manual.get(name)),))
+                )
+        if summary_actions:
+            actions.append(Action("technical_summary", "scroll"))
+            actions.extend(summary_actions)
 
         origin_fields = (
             "tech_project_name",
@@ -412,25 +509,49 @@ class M4Workflow:
             "engineering_project_no",
             "other_origin",
         )
-        if any(name in manual.values for name in origin_fields):
+        origin_actions = self._difference_actions(
+            before.values,
+            before.selected_options,
+            tuple((name, "fill", manual.get(name)) for name in origin_fields if name in manual.values),
+        )
+        if origin_actions:
             actions.append(Action("origin", "scroll"))
-            actions.extend(Action(name, "fill", manual.get(name)) for name in origin_fields if name in manual.values)
+            actions.extend(origin_actions)
 
         operator_fields = ("pct_count", "operator_name", "operator_phone", "operator_email")
-        if any(name in manual.values for name in operator_fields):
-            actions.append(Action("operator", "scroll"))
-            if "pct_count" in manual.values:
-                actions.append(Action("pct_count", "select", manual.get("pct_count")))
-            actions.extend(Action(name, "fill", manual.get(name)) for name in operator_fields if name in manual.values and name != "pct_count")
-        if "first_inventor_id" in manual.values or "first_inventor_contact" in manual.values:
-            actions.extend(
-                Action(name, "fill", manual.get(name))
-                for name in ("first_inventor_id", "first_inventor_contact")
+        operator_actions = self._difference_actions(
+            before.values,
+            before.selected_options,
+            tuple(
+                (name, "select" if name == "pct_count" else "fill", manual.get(name))
+                for name in operator_fields
                 if name in manual.values
-            )
+            ),
+        )
+        if operator_actions:
+            actions.append(Action("operator", "scroll"))
+            actions.extend(operator_actions)
 
-        actions.append(Action("attachments", "scroll"))
-        actions.append(Action("attachments", "verify_attachments", manual.get("attachment_name")))
+        if self.verify_attachments:
+            actions.append(Action("attachments", "scroll"))
+            actions.append(Action("attachments", "verify_attachments", manual.get("attachment_name")))
+        return actions
+
+    @staticmethod
+    def _difference_actions(
+        values: Mapping[str, str],
+        selected: Mapping[str, str],
+        requested: Sequence[tuple[str, str, str]],
+    ) -> list[Action]:
+        actions: list[Action] = []
+        for control_id, kind, expected in requested:
+            current = selected.get(control_id) if kind in {"select", "dropdown"} else values.get(control_id)
+            if _is_empty_page_value(current):
+                actions.append(Action(control_id, kind, expected))
+                continue
+            if _normalise_page_value(control_id, str(current)) == _normalise_page_value(control_id, expected):
+                continue
+            raise M4PlanningError(f"控件 {control_id} 已有非空值且与确认草稿不一致，拒绝覆盖。")
         return actions
 
     @staticmethod
