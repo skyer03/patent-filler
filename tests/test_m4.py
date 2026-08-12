@@ -56,6 +56,15 @@ class M4WorkflowTests(unittest.TestCase):
         self.assertEqual(report.final_page.values["summary_text"], manual["summary_text"])
         self.assertEqual(report.final_page.tables["inventor_rows"], tuple(draft.inventors))
 
+    def test_design_type_uses_the_design_web_option(self) -> None:
+        draft = first_draft()
+        draft.patent_type = "design"
+
+        report = M4Workflow(PROFILE).run(draft)
+
+        self.assertTrue(report.verified, report.to_dict(include_steps=False))
+        self.assertEqual(report.final_page.selected_options["patent_type"], "外观设计")
+
     def test_pending_review_and_existing_row_mismatch_stop_before_input(self) -> None:
         draft = first_draft()
         draft.add_review("inventors")

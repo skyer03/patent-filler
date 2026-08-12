@@ -27,6 +27,24 @@ TEXT = """第 1 页 (共 1 页)
 国家知识产权局依照中华人民共和国专利法进行审查
 """
 
+DESIGN_TEXT = """第 1 页 (共 1 页)
+证书号第9763238号
+外 观 设 计 专 利 证 书
+外观设计名称：输送带趴轨巡检机器人
+专利权人：华电科工股份有限公司
+地址：100070 北京市丰台区
+设 计 人：麻粒群;石峥嵘;穆慧灵;刘晓朋;王琪;刘雪松;文明波
+冯新强;佟显忠
+专 利 号：ZL 2025 3 0283260.3
+授权公告号：CN 309744972 S
+专利申请日：2025年05月20日
+授权公告日：2026年01月23日
+申请日时申请人：华电科工股份有限公司
+申请日时设计人：麻粒群;石峥嵘;穆慧灵;刘晓朋;王琪;刘雪松;文明波
+冯新强;佟显忠
+国家知识产权局依照中华人民共和国专利法进行审查
+"""
+
 
 class CertificateParserTests(unittest.TestCase):
     def test_parses_text_layer_certificate_and_reconstructs_wrapped_list(self) -> None:
@@ -39,6 +57,19 @@ class CertificateParserTests(unittest.TestCase):
         self.assertEqual(draft.grant_publication_date, "2025-01-14")
         self.assertEqual(draft.current_patentees, ["华电科工股份有限公司"])
         self.assertEqual(draft.inventors, ["张健翔", "张星波", "赵玉琢"])
+        self.assertEqual(draft.needs_review, [])
+        self.assertIn("inventor_list_cross_line_reconstructed", draft.notes)
+
+    def test_design_labels_map_to_title_type_and_inventors(self) -> None:
+        draft = CertificateParser().parse_text(DESIGN_TEXT, "design.pdf")
+
+        self.assertEqual(draft.certificate_template, "cnipa_electronic_one_page_text_layer_2024")
+        self.assertEqual(draft.patent_type, "design")
+        self.assertEqual(draft.title, "输送带趴轨巡检机器人")
+        self.assertEqual(draft.patent_no, "ZL202530283260.3")
+        self.assertEqual(draft.inventors[0], "麻粒群")
+        self.assertEqual(draft.inventors[-1], "佟显忠")
+        self.assertEqual(draft.inventors, draft.application_date_inventors)
         self.assertEqual(draft.needs_review, [])
         self.assertIn("inventor_list_cross_line_reconstructed", draft.notes)
 

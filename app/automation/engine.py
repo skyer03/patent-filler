@@ -634,7 +634,7 @@ class InMemoryPageAdapter:
     def select(self, control_id: str, visible_text: str) -> None:
         options = {
             "patent_status": {"待审核", "授权", "失效"},
-            "patent_type": {"发明", "实用新型"},
+            "patent_type": {"发明", "实用新型", "外观设计"},
             "pct_count": {"请选择", "是", "否"},
         }
         if visible_text not in options.get(control_id, set()):

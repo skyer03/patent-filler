@@ -227,7 +227,7 @@ def _web_patent_no(value: str) -> str:
 
 
 def _web_patent_type(value: str) -> str:
-    return {"invention": "发明", "utility_model": "实用新型"}.get(value, value)
+    return {"invention": "发明", "utility_model": "实用新型", "design": "外观设计"}.get(value, value)
 
 
 def _normalise_page_value(control_id: str, value: str) -> str:

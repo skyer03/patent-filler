@@ -51,6 +51,15 @@ class DomTaskTests(unittest.TestCase):
         self.assertTrue(task["safety"]["overwrite_existing"])
         self.assertTrue(all(item["overwrite_policy"] == "reviewed_value" for item in task["fields"]))
 
+    def test_design_type_maps_to_visible_web_option(self) -> None:
+        draft = load_workflow_sources(GOLDEN)[0]
+        draft.patent_type = "design"
+
+        task = build_dom_task(draft)
+        fields = {item["field_id"]: item for item in task["fields"]}
+
+        self.assertEqual(fields["patent_type"]["value"], "外观设计")
+
     def test_complex_controls_are_opt_in_and_come_from_reviewed_fields(self) -> None:
         draft = load_workflow_sources(GOLDEN)[0]
         task = build_dom_task(draft, include_complex=True)
