@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -18,6 +18,7 @@ class AnchorSpec:
     text: str
     kind: str = "label"
     required: bool = False
+    min_confidence: float | None = None
 
 
 @dataclass(frozen=True)
@@ -55,6 +56,32 @@ class ControlSpec:
     destructive: bool = False
     required_state: str = "ready"
     source: str = "manual_or_config"
+    readback: "ReadbackSpec" = field(default_factory=lambda: ReadbackSpec())
+
+
+@dataclass(frozen=True)
+class ReadbackSpec:
+    """Profile-declared way to read a visible control without DOM access.
+
+    ``options`` intentionally stays data-driven.  Geometry differs between
+    approved intranet profiles, while the runner supports a small, audited
+    set of methods (clipboard, visual choice, table clipboard and OCR).
+    """
+
+    method: str = "unsupported"
+    normalizer: str = "text"
+    options: dict[str, Any] = field(default_factory=dict)
+
+    @classmethod
+    def from_dict(cls, value: object) -> "ReadbackSpec":
+        if value is None:
+            return cls()
+        if not isinstance(value, dict):
+            raise ProfileError(f"控件回读配置无效：{value!r}")
+        method = str(value.get("method", "unsupported")).strip()
+        normalizer = str(value.get("normalizer", "text")).strip()
+        options = {key: item for key, item in value.items() if key not in {"method", "normalizer"}}
+        return cls(method, normalizer, options)
 
 
 @dataclass(frozen=True)
@@ -105,6 +132,11 @@ def load_profile(path: str | Path) -> PageProfile:
                     text=str(item["text"]),
                     kind=str(item.get("kind", "label")),
                     required=bool(item.get("required", False)),
+                    min_confidence=(
+                        float(item["min_confidence"])
+                        if item.get("min_confidence") is not None
+                        else None
+                    ),
                 )
                 for item in data["anchors"]
             ),
@@ -119,6 +151,7 @@ def load_profile(path: str | Path) -> PageProfile:
                     destructive=bool(item.get("destructive", False)),
                     required_state=str(item.get("required_state", "ready")),
                     source=str(item.get("source", "manual_or_config")),
+                    readback=ReadbackSpec.from_dict(item.get("readback")),
                 )
                 for item in data["controls"]
             ),

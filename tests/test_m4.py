@@ -5,9 +5,9 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from app.automation import InMemoryPageAdapter, load_profile
+from app.automation import AttachmentSnapshot, InMemoryPageAdapter, PageSnapshot, load_profile
 from app.domain import CertificateDraft
-from app.m4 import M4Workflow, ManualFields, run_m4_regression
+from app.m4 import M4PlanningError, M4Workflow, ManualFields, run_m4_regression
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -72,6 +72,61 @@ class M4WorkflowTests(unittest.TestCase):
         mismatched = M4Workflow(PROFILE).run(clean, adapter=adapter)
         self.assertEqual(mismatched.status, "blocked")
         self.assertEqual(adapter.observe().to_dict(), before)
+
+    def test_public_planner_skips_matching_values_and_rejects_conflicts(self) -> None:
+        draft = first_draft()
+        matching = PageSnapshot(
+            page_state="ready",
+            values={
+                "patent_no": "2020104300960",
+                "application_title": draft.title or "",
+                "application_date": draft.application_date or "",
+                "grant_date": draft.grant_publication_date or "",
+                "patentee_merge": "；".join(draft.current_patentees),
+                "inventor_merge": "；".join(draft.inventors),
+            },
+            selected_options={"patent_type": "发明"},
+            tables={
+                "rights_holder_rows": tuple(draft.current_patentees),
+                "inventor_rows": tuple(draft.inventors),
+            },
+            selected_person=draft.inventors[0],
+            attachments=(AttachmentSnapshot("certificate.pdf", True, True),),
+        )
+
+        actions = M4Workflow(PROFILE).plan_actions(draft, ManualFields({}), matching)
+
+        self.assertEqual([item.kind for item in actions], ["scroll", "verify_attachments"])
+        conflict = PageSnapshot(page_state="ready", values={"patent_no": "999999"})
+        with self.assertRaises(M4PlanningError):
+            M4Workflow(PROFILE).plan_actions(draft, ManualFields({}), conflict)
+
+    def test_mock_first_pass_can_defer_attachment_verification(self) -> None:
+        draft = first_draft()
+        matching = PageSnapshot(
+            page_state="ready",
+            values={
+                "patent_no": "2020104300960",
+                "application_title": draft.title or "",
+                "application_date": draft.application_date or "",
+                "grant_date": draft.grant_publication_date or "",
+                "patentee_merge": ";".join(draft.current_patentees),
+                "inventor_merge": ";".join(draft.inventors),
+            },
+            selected_options={"patent_type": "发明"},
+            tables={
+                "rights_holder_rows": tuple(draft.current_patentees),
+                "inventor_rows": tuple(draft.inventors),
+            },
+            selected_person=draft.inventors[0],
+            attachments=(AttachmentSnapshot("certificate.pdf", True, True),),
+        )
+
+        actions = M4Workflow(PROFILE, verify_attachments=False).plan_actions(
+            draft, ManualFields({}), matching
+        )
+
+        self.assertEqual(actions, [])
 
     def test_diagnostics_redact_sensitive_page_values(self) -> None:
         draft = first_draft()

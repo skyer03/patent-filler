@@ -898,6 +898,7 @@ def run_m4_queue(
     max_retries: int = 1,
     stop_on_failure: bool = True,
     limit: int | None = None,
+    stop_requested: Callable[[], bool] | None = None,
 ) -> M6BatchReport:
     """Run one PDF or reviewed JSON draft per queue task through the M4 guardrails."""
 
@@ -923,7 +924,11 @@ def run_m4_queue(
         context.save_checkpoint({"sample_index": draft.sample_index}, phase="review")
         report_path = output_root / task.task_id / "m4-report.json" if output_root else None
         diagnostic_path = output_root / task.task_id / "diagnostics.json" if output_root else None
-        report = M4Workflow(profile, max_retries=max_retries).run(
+        report = M4Workflow(
+            profile,
+            max_retries=max_retries,
+            stop_requested=stop_requested,
+        ).run(
             draft,
             manual,
             diagnostics=diagnostic_path,

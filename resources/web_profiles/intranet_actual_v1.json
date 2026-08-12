@@ -1,0 +1,35 @@
+{
+  "id": "cnipa_intranet_actual",
+  "version": "intranet-actual-1.0.0-calibration-required-2026-08-05",
+  "minimum_anchors": ["system_title", "module_title"],
+  "page_fingerprint": {
+    "system_title": "科技项目管理系统 信创版",
+    "module_title": "专利信息库",
+    "ready_state": "ready",
+    "error_states": ["错误页面", "页面加载中", "校验失败", "弹窗遮挡"]
+  },
+  "template_set": "intranet_v1",
+  "anchors": [
+    {"id": "system_title", "text": "科技项目管理系统 信创版", "kind": "page", "required": true},
+    {"id": "module_title", "text": "专利信息库", "kind": "page", "required": true},
+    {"id": "basic_info", "text": "基本信息", "kind": "section"},
+    {"id": "patent_no", "text": "专利号", "kind": "label"},
+    {"id": "application_title", "text": "申请名称", "kind": "label"},
+    {"id": "patent_type", "text": "申请类型", "kind": "label"},
+    {"id": "application_date", "text": "申请受理日", "kind": "label"},
+    {"id": "grant_date", "text": "授权公告日", "kind": "label"},
+    {"id": "joint_application", "text": "联合申请", "kind": "label"},
+    {"id": "error_state", "text": "错误页面", "kind": "state"},
+    {"id": "loading_state", "text": "页面加载中", "kind": "state"},
+    {"id": "validation_state", "text": "校验失败", "kind": "state"},
+    {"id": "modal_state", "text": "弹窗遮挡", "kind": "state"}
+  ],
+  "controls": [
+    {"id": "patent_no", "label": "专利号", "section": "basic_info", "kind": "text", "locator": {"anchor": "patent_no", "width": 300}, "readback": {"method": "unsupported"}},
+    {"id": "application_title", "label": "申请名称", "section": "basic_info", "kind": "text", "locator": {"anchor": "application_title", "width": 420}, "readback": {"method": "unsupported"}},
+    {"id": "patent_type", "label": "申请类型", "section": "basic_info", "kind": "radio", "locator": {"anchor": "patent_type", "width": 220, "height": 32}, "readback": {"method": "unsupported"}},
+    {"id": "application_date", "label": "申请受理日", "section": "basic_info", "kind": "date", "locator": {"anchor": "application_date", "width": 180}, "readback": {"method": "unsupported"}},
+    {"id": "grant_date", "label": "授权公告日", "section": "basic_info", "kind": "date", "locator": {"anchor": "grant_date", "width": 180}, "readback": {"method": "unsupported"}},
+    {"id": "joint_application", "label": "联合申请", "section": "basic_info", "kind": "checkbox", "locator": {"anchor": "joint_application", "placement": "within", "dx": -34, "dy": -5, "width": 30, "height": 30}, "readback": {"method": "unsupported"}}
+  ]
+}

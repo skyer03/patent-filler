@@ -1,0 +1,15 @@
+:root { color-scheme: light; font-family: "Microsoft YaHei", system-ui, sans-serif; }
+body { width: 360px; margin: 0; color: #172033; background: #f5f7fb; }
+main { padding: 14px; }
+h1 { margin: 0 0 8px; font-size: 18px; }
+h2 { margin: 14px 0 6px; font-size: 14px; }
+.boundary { margin: 0 0 12px; padding: 9px; border-left: 4px solid #2b63d9; background: #fff; font-size: 12px; line-height: 1.55; }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; }
+button { min-height: 36px; border: 1px solid #aab4c7; border-radius: 6px; background: #fff; cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+button.primary { border-color: #2458bd; color: #fff; background: #2b63d9; }
+button.danger { border-color: #b74040; color: #9f2525; }
+#status { padding: 8px; border-radius: 6px; background: #fff; font-size: 12px; line-height: 1.5; }
+#status.error { color: #9f2525; background: #fff1f1; }
+#status.success { color: #176b38; background: #edf9f1; }
+pre { max-height: 210px; overflow: auto; white-space: pre-wrap; word-break: break-all; font-size: 11px; }

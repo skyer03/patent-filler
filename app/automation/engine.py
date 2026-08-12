@@ -480,12 +480,22 @@ class Win32InputBackend:
 
     def key(self, name: str) -> None:
         user32 = self._user32()
-        keys = {"enter": 0x0D, "escape": 0x1B, "tab": 0x09, "ctrl": 0x11, "a": 0x41}
+        keys = {
+            "enter": 0x0D,
+            "escape": 0x1B,
+            "tab": 0x09,
+            "ctrl": 0x11,
+            "a": 0x41,
+            "c": 0x43,
+            "home": 0x24,
+            "end": 0x23,
+        }
         normalized = name.casefold()
-        if normalized == "ctrl+a":
+        if normalized in {"ctrl+a", "ctrl+c", "ctrl+home", "ctrl+end"}:
+            child = normalized.split("+", 1)[1]
             user32.keybd_event(keys["ctrl"], 0, 0, 0)
-            user32.keybd_event(keys["a"], 0, 0, 0)
-            user32.keybd_event(keys["a"], 0, 0x0002, 0)
+            user32.keybd_event(keys[child], 0, 0, 0)
+            user32.keybd_event(keys[child], 0, 0x0002, 0)
             user32.keybd_event(keys["ctrl"], 0, 0x0002, 0)
             return
         if normalized not in keys:

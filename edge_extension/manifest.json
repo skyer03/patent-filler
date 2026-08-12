@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "专利证书安全预填",
+  "version": "1.0.0",
+  "description": "从本机已审核任务预填当前专利页面，始终停在人工保存之前。",
+  "permissions": [
+    "activeTab",
+    "nativeMessaging",
+    "scripting",
+    "storage"
+  ],
+  "background": {
+    "service_worker": "service_worker.js"
+  },
+  "action": {
+    "default_title": "专利证书安全预填",
+    "default_popup": "popup.html"
+  }
+}

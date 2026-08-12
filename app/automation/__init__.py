@@ -22,15 +22,22 @@ from .engine import (
     Win32InputBackend,
     run_m3_poc,
 )
-from .profile import ControlSpec, PageProfile, load_profile
+from .profile import ControlSpec, PageProfile, ReadbackSpec, load_profile
 from .recognizer import (
     AnchorRecognizer,
     BoundingBox,
     RecognitionResult,
+    PaddleTextDetector,
     TemplateMatcher,
     TextObservation,
 )
 from .window import WindowBinding, WindowBinder, WindowRect
+from .screen_adapter import (
+    ProfileScreenReadback,
+    ScreenPageAdapter,
+    Win32Clipboard,
+    auto_update_profile_issues,
+)
 
 __all__ = [
     "Action",
@@ -49,8 +56,11 @@ __all__ = [
     "PageProfile",
     "PageAdapter",
     "PageSnapshot",
+    "PaddleTextDetector",
     "RecognitionResult",
+    "ReadbackSpec",
     "ScreenActionExecutor",
+    "ScreenPageAdapter",
     "StepResult",
     "StopRequested",
     "TemplateMatcher",
@@ -60,6 +70,9 @@ __all__ = [
     "WindowRect",
     "VerificationStatus",
     "Win32InputBackend",
+    "Win32Clipboard",
+    "ProfileScreenReadback",
+    "auto_update_profile_issues",
     "load_profile",
     "run_m3_poc",
 ]

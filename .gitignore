@@ -2,12 +2,14 @@ __pycache__/
 *.py[cod]
 *.pyo
 .venv/
+.runtime/
 venv/
 env/
 .m6/
 diagnostics/
 *.annotated.png
 .pytest_cache/
+.playwright-cli/
 .coverage
 htmlcov/
 *.egg-info/

@@ -170,7 +170,7 @@ class M2ToolApp(ttk.Frame):
         self._render()
         state = "允许识别后输入" if result.safe_for_input else "安全停机：不允许输入"
         if "ocr_unavailable" in result.issues:
-            state += "；请安装 pytesseract、Tesseract 和 chi_sim 语言包"
+            state += "；请使用随项目提供的 Python 运行时，并确认 PaddleOCR 本地模型已安装"
         self.status.config(text=f"{state}；方法：{', '.join(result.methods) or '无'}")
 
     def _write_result(self, value: dict) -> None:

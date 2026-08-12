@@ -95,9 +95,9 @@ class M6ProfileAndBackupTests(unittest.TestCase):
             source.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
             registry.install(source, activate=True)
             self.assertEqual(registry.active_version, "m6-test-v2")
-            check = registry.check_compatibility({"system_title", "module_title"})
+            check = registry.check_compatibility({"system_title"})
             self.assertFalse(check.compatible)
-            self.assertIn("basic_info", check.missing_anchors)
+            self.assertIn("module_title", check.missing_anchors)
             registry.rollback()
             self.assertEqual(registry.active_version, "m6-test-v1")
 
