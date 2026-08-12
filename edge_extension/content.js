@@ -195,9 +195,21 @@
       if (radios.length) return dedupe(radios.map((item) => item.closest("fieldset,.field,[role='radiogroup']") || item));
     }
     if (fieldProfile.kind === "table") {
-      return candidates.filter((item) => item.matches("table,[role='grid']"));
+      const tables = candidates.filter((item) => item.matches("table,[role='grid']"));
+      const identitySelector = fieldProfile.table?.identity_selector;
+      const identityTexts = (fieldProfile.table?.identity_texts || []).map(normalizeText).filter(Boolean);
+      if (!identitySelector && identityTexts.length === 0) return tables;
+      return tables.filter((item) => {
+        const selectorMatch = Boolean(identitySelector && item.querySelector(identitySelector));
+        const texts = [...item.querySelectorAll(".x-column-header-text,th")].map((node) => normalizeText(node.textContent));
+        const textMatch = identityTexts.length > 0 && identityTexts.every((text) => texts.includes(text));
+        return selectorMatch || textMatch;
+      });
     }
     if (fieldProfile.kind === "person") {
+      if (fieldProfile.person?.mode === "direct") {
+        return candidates.filter((item) => item.matches("input,textarea,[contenteditable='true'],[role='textbox']"));
+      }
       return candidates.filter((item) => item.matches("button,[role='button']"));
     }
     return candidates.filter((item) => {
@@ -224,12 +236,16 @@
       const table = fieldProfile?.table;
       if (!table?.row_selector || !table?.value_selector) throw new Error("table_profile_incomplete");
       return [...element.querySelectorAll(table.row_selector)].map((row) => {
-        const values = dedupe([...row.querySelectorAll(table.value_selector)]);
+        const values = [...new Set(row.querySelectorAll(table.value_selector))];
         if (values.length !== 1) throw new Error("table_row_value_not_unique");
         return elementValue(values[0], "text", "", null);
       });
     }
     if (kind === "person") {
+      if (fieldProfile?.person?.mode === "direct") {
+        if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) return element.value;
+        return normalizeText(element.textContent);
+      }
       const selector = fieldProfile?.person?.readback_selector;
       if (!selector) throw new Error("person_profile_incomplete");
       const readbacks = dedupe(queryAll(selector));
@@ -276,38 +292,222 @@
     dispatch(element);
   }
 
-  async function setTableField(element, field, fieldProfile) {
+  function commitTableEditor(input) {
+    const options = {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+      view: window,
+      key: "Enter",
+      code: "Enter",
+      keyCode: 13,
+      charCode: 13,
+      which: 13,
+    };
+    input.dispatchEvent(new KeyboardEvent("keydown", options));
+    input.dispatchEvent(new KeyboardEvent("keypress", options));
+    input.dispatchEvent(new KeyboardEvent("keyup", options));
+    input.blur();
+  }
+
+  function wait(milliseconds) {
+    return new Promise((resolve) => setTimeout(resolve, milliseconds));
+  }
+
+  function clickLikeUser(element, doubleClick = false) {
+    const rect = element.getBoundingClientRect();
+    const clientX = Math.round(rect.left + rect.width / 2);
+    const clientY = Math.round(rect.top + rect.height / 2);
+    const base = {
+      bubbles: true,
+      cancelable: true,
+      composed: true,
+      view: window,
+      button: 0,
+      clientX,
+      clientY,
+      screenX: Math.round(window.screenX + clientX),
+      screenY: Math.round(window.screenY + clientY),
+    };
+    if (typeof PointerEvent === "function") {
+      element.dispatchEvent(new PointerEvent("pointerdown", {
+        ...base, buttons: 1, detail: 0, pointerId: 1, pointerType: "mouse", isPrimary: true,
+      }));
+    }
+    element.dispatchEvent(new MouseEvent("mousedown", { ...base, buttons: 1, detail: 1 }));
+    if (typeof PointerEvent === "function") {
+      element.dispatchEvent(new PointerEvent("pointerup", {
+        ...base, buttons: 0, detail: 0, pointerId: 1, pointerType: "mouse", isPrimary: true,
+      }));
+    }
+    element.dispatchEvent(new MouseEvent("mouseup", { ...base, buttons: 0, detail: 1 }));
+    element.dispatchEvent(new MouseEvent("click", { ...base, buttons: 0, detail: 1 }));
+    if (doubleClick) element.dispatchEvent(new MouseEvent("dblclick", { ...base, buttons: 0, detail: 2 }));
+  }
+
+  function rectanglesOverlap(first, second) {
+    const a = first.getBoundingClientRect();
+    const b = second.getBoundingClientRect();
+    return Math.min(a.right, b.right) - Math.max(a.left, b.left) > 2
+      && Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top) > 2;
+  }
+
+  function elementVisible(element) {
+    if (!element?.isConnected) return false;
+    const style = getComputedStyle(element);
+    if (style.display === "none" || style.visibility === "hidden" || style.visibility === "collapse") {
+      return false;
+    }
+    return [...element.getClientRects()].some((rect) => rect.width > 2 && rect.height > 2);
+  }
+
+  async function closeVisibleTableEditors(element, tableProfile) {
+    const inputs = dedupe([...element.querySelectorAll(tableProfile.new_input_selector)]).filter(elementVisible);
+    for (const input of inputs) {
+      if (!(input instanceof HTMLInputElement || input instanceof HTMLTextAreaElement)) continue;
+      input.focus();
+      input.blur();
+    }
+    if (inputs.length) await wait(80);
+    const remaining = dedupe([...element.querySelectorAll(tableProfile.new_input_selector)]).filter(elementVisible);
+    if (remaining.length > 0) {
+      throw new Error("table_stale_editor_active");
+    }
+  }
+
+  async function waitForAddedTableRow(fieldProfile, field, tableProfile, prefix) {
+    const deadline = Date.now() + 1500;
+    while (Date.now() < deadline) {
+      const tables = locate(fieldProfile);
+      if (tables.length > 1) throw new Error("table_remounted_not_unique");
+      if (tables.length === 1) {
+        const values = elementValue(tables[0], "table", field.value, fieldProfile).map(normalizeText);
+        const sharedLength = Math.min(values.length, prefix.length);
+        if (values.slice(0, sharedLength).some((value, row) => value !== prefix[row])) {
+          throw new Error("table_existing_row_changed_after_add");
+        }
+        if (values.length > prefix.length + 1) throw new Error("table_add_row_count_mismatch");
+        if (values.length === prefix.length + 1) {
+          if (values[prefix.length] !== "") throw new Error("table_new_row_not_blank");
+          const rows = dedupe([...tables[0].querySelectorAll(tableProfile.row_selector)]);
+          if (rows.length !== values.length) throw new Error("table_row_count_mismatch");
+          return { element: tables[0], row: rows[prefix.length] };
+        }
+      }
+      await wait(40);
+    }
+    throw new Error("table_new_row_not_observed");
+  }
+
+  async function activateNewTableInput(element, row, tableProfile) {
+    const cells = dedupe([...row.querySelectorAll(tableProfile.new_cell_selector)]);
+    if (cells.length !== 1) throw new Error("table_new_cell_not_unique");
+    const cell = cells[0];
+    cell.scrollIntoView({ block: "nearest", inline: "nearest" });
+
+    for (const doubleClick of [false, true]) {
+      clickLikeUser(cell, doubleClick);
+      const deadline = Date.now() + 700;
+      while (Date.now() < deadline) {
+        const visibleInputs = dedupe([...element.querySelectorAll(tableProfile.new_input_selector)]).filter(elementVisible);
+        if (visibleInputs.length > 1) throw new Error("table_new_input_not_unique");
+        const matching = visibleInputs.filter((input) => rectanglesOverlap(input, cell));
+        if (matching.length === 1) return matching[0];
+        await wait(40);
+      }
+    }
+    throw new Error("table_editor_not_on_new_row");
+  }
+
+  async function waitForTableValues(fieldProfile, field, expected, errorPrefix = "table_incremental") {
+    const deadline = Date.now() + 1500;
+    while (Date.now() < deadline) {
+      const tables = locate(fieldProfile);
+      if (tables.length > 1) throw new Error("table_remounted_not_unique");
+      if (tables.length === 1) {
+        const values = elementValue(tables[0], "table", field.value, fieldProfile).map(normalizeText);
+        if (values.length > expected.length) throw new Error(`${errorPrefix}_row_count_mismatch`);
+        if (values.length === expected.length && values.every((value, row) => value === expected[row])) {
+          return { element: tables[0], values };
+        }
+      }
+      await wait(40);
+    }
+    throw new Error(`${errorPrefix}_readback_mismatch`);
+  }
+
+  async function overwriteExistingTableRows(element, field, fieldProfile, expected, current) {
+    const tableProfile = fieldProfile.table;
+    if (current.length > expected.length) throw new Error("table_overwrite_requires_delete");
+    for (let index = 0; index < current.length; index += 1) {
+      if (current[index] === expected[index]) continue;
+      await closeVisibleTableEditors(element, tableProfile);
+      const rows = dedupe([...element.querySelectorAll(tableProfile.row_selector)]);
+      if (rows.length !== current.length) throw new Error("table_overwrite_row_count_changed");
+      const editor = await activateNewTableInput(element, rows[index], tableProfile);
+      if (!(editor instanceof HTMLInputElement || editor instanceof HTMLTextAreaElement)) {
+        throw new Error("table_existing_input_unsupported");
+      }
+      editor.focus();
+      nativeSetValue(editor, expected[index]);
+      commitTableEditor(editor);
+      const next = [...current];
+      next[index] = expected[index];
+      const committed = await waitForTableValues(fieldProfile, field, next, "table_overwrite");
+      element = committed.element;
+      current = committed.values;
+    }
+    return { element, current };
+  }
+
+  async function setTableField(element, field, fieldProfile, allowOverwrite = false) {
     const expected = Array.isArray(field.value) ? field.value.map(normalizeText) : null;
     const tableProfile = fieldProfile.table;
-    if (!expected || !tableProfile?.add_selector || !tableProfile?.new_input_selector) {
+    if (!expected || !tableProfile?.add_selector || !tableProfile?.row_selector
+      || !tableProfile?.new_cell_selector || !tableProfile?.new_input_selector) {
       throw new Error("table_profile_incomplete");
     }
     let current = elementValue(element, "table", field.value, fieldProfile).map(normalizeText);
+    if (allowOverwrite) {
+      const overwritten = await overwriteExistingTableRows(element, field, fieldProfile, expected, current);
+      element = overwritten.element;
+      current = overwritten.current;
+    }
     for (let index = current.length; index < expected.length; index += 1) {
-      const addButtons = dedupe(queryAll(tableProfile.add_selector));
+      await closeVisibleTableEditors(element, tableProfile);
+      const addCandidates = tableProfile.add_within_table
+        ? [...element.querySelectorAll(tableProfile.add_selector)]
+        : queryAll(tableProfile.add_selector);
+      const addButtons = dedupe(addCandidates);
       if (addButtons.length !== 1) throw new Error("table_add_control_not_unique");
       if (BLOCKED_LABELS.has(normalizeText(addButtons[0].textContent))) throw new Error("destructive_target_blocked");
-      addButtons[0].click();
-      await new Promise((resolve) => setTimeout(resolve, 80));
-      const tables = locate(fieldProfile);
-      if (tables.length !== 1) throw new Error("table_remounted_not_unique");
-      element = tables[0];
-      const newInputs = dedupe([...element.querySelectorAll(tableProfile.new_input_selector)]);
-      if (newInputs.length !== 1) throw new Error("table_new_input_not_unique");
-      if (!(newInputs[0] instanceof HTMLInputElement || newInputs[0] instanceof HTMLTextAreaElement)) {
+      clickLikeUser(addButtons[0]);
+      const added = await waitForAddedTableRow(fieldProfile, field, tableProfile, current);
+      element = added.element;
+      const newInput = await activateNewTableInput(element, added.row, tableProfile);
+      if (!(newInput instanceof HTMLInputElement || newInput instanceof HTMLTextAreaElement)) {
         throw new Error("table_new_input_unsupported");
       }
-      nativeSetValue(newInputs[0], expected[index]);
-      await new Promise((resolve) => setTimeout(resolve, 80));
-      current = elementValue(element, "table", field.value, fieldProfile).map(normalizeText);
-      if (current.length !== index + 1 || current.some((value, row) => value !== expected[row])) {
-        throw new Error("table_incremental_readback_mismatch");
-      }
+      newInput.focus();
+      nativeSetValue(newInput, expected[index]);
+      commitTableEditor(newInput);
+      const committed = await waitForTableValues(fieldProfile, field, expected.slice(0, index + 1));
+      element = committed.element;
+      current = committed.values;
     }
   }
 
   async function setPersonField(element, field, fieldProfile) {
     const person = fieldProfile.person;
+    if (person?.mode === "direct") {
+      if (!(element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement)) {
+        throw new Error("person_direct_input_unsupported");
+      }
+      element.focus();
+      nativeSetValue(element, normalizeText(field.value));
+      element.blur();
+      return;
+    }
     if (!person?.search_selector || !person?.result_selector || !person?.choose_selector || !person?.readback_selector) {
       throw new Error("person_profile_incomplete");
     }
@@ -336,9 +536,9 @@
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
 
-  async function setField(element, field, fieldProfile) {
+  async function setField(element, field, fieldProfile, allowOverwrite = false) {
     if (field.kind === "table") {
-      await setTableField(element, field, fieldProfile);
+      await setTableField(element, field, fieldProfile, allowOverwrite);
       return;
     }
     if (field.kind === "person") {
@@ -427,8 +627,13 @@
       const expected = normalizeValue(field.value, field.normalizer);
       const actualBefore = normalizeValue(before, field.normalizer);
       const safeTablePrefix = field.kind === "table" && tableIsExpectedPrefix(before, field.value, field.normalizer);
-      if (field.kind === "table" && !safeTablePrefix) {
-        const errorCode = allowOverwrite ? "overwrite_not_supported_table" : "existing_value_conflict";
+      if (field.kind === "table" && !safeTablePrefix && !allowOverwrite) {
+        const errorCode = "existing_value_conflict";
+        await report(task, field, { status: "blocked", before, after: before, verified: false, error_code: errorCode });
+        return { completed: false, message: `${errorCode}:${field.field_id}` };
+      }
+      if (field.kind === "table" && allowOverwrite && before.length > field.value.length) {
+        const errorCode = "table_overwrite_requires_delete";
         await report(task, field, { status: "blocked", before, after: before, verified: false, error_code: errorCode });
         return { completed: false, message: `${errorCode}:${field.field_id}` };
       }
@@ -442,21 +647,22 @@
         continue;
       }
       try {
-        await setField(control, field, fieldProfile);
+        await setField(control, field, fieldProfile, allowOverwrite);
         await new Promise((resolve) => setTimeout(resolve, 80));
       } catch (error) {
         let failedAfter = before;
+        const errorCode = String(error?.message || error);
         try {
           const current = locate(fieldProfile);
           if (current.length === 1) failedAfter = elementValue(current[0], field.kind, field.value, fieldProfile);
         } catch (_readError) { /* retain the safe pre-write evidence */ }
-        await report(task, field, { status: "failed", before, after: failedAfter, verified: false, error_code: String(error?.message || error), overwrote_existing: overwroteExisting });
-        return { completed: false, message: `write_failed:${field.field_id}` };
+        await report(task, field, { status: "failed", before, after: failedAfter, verified: false, error_code: errorCode, overwrote_existing: overwroteExisting });
+        return { completed: false, message: `write_failed:${field.field_id}:${errorCode}` };
       }
       const afterControls = locate(fieldProfile);
       if (afterControls.length !== 1) {
         await report(task, field, { status: "failed", before, after: before, verified: false, error_code: "field_remounted_not_unique", overwrote_existing: overwroteExisting });
-        return { completed: false, message: `write_failed:${field.field_id}` };
+        return { completed: false, message: `write_failed:${field.field_id}:field_remounted_not_unique` };
       }
       const after = elementValue(afterControls[0], field.kind, field.value, fieldProfile);
       const verified = normalizeValue(after, field.normalizer) === expected;

@@ -25,7 +25,7 @@ from .m4 import ManualFields, review_draft
 
 TASK_FORMAT = "patent-dom-task-v1"
 RESULT_FORMAT = "patent-dom-result-v1"
-DEFAULT_PROFILE_VERSION = "dom-poc-v1"
+DEFAULT_PROFILE_VERSION = "dom-poc-v3"
 DEFAULT_STORE = Path(".m6") / "dom-bridge"
 MAX_NATIVE_MESSAGE_BYTES = 4 * 1024 * 1024
 MAX_STORE_FILE_BYTES = 4 * 1024 * 1024
@@ -205,19 +205,19 @@ def build_dom_task(
                 _field(
                     "patentee_merge",
                     "text",
-                    "；".join(draft.current_patentees),
+                    ",".join(draft.current_patentees),
                     source="derived_from_reviewed_table",
                     confidence=_confidence(draft, "current_patentees"),
-                    normalizer="merged_list",
+                    normalizer="trim",
                     overwrite_policy=overwrite_policy,
                 ),
                 _field(
                     "inventor_merge",
                     "text",
-                    "；".join(draft.inventors),
+                    ",".join(draft.inventors),
                     source="derived_from_reviewed_table",
                     confidence=_confidence(draft, "inventors"),
-                    normalizer="merged_list",
+                    normalizer="trim",
                     overwrite_policy=overwrite_policy,
                 ),
             ]

@@ -184,11 +184,11 @@ def build_parser() -> argparse.ArgumentParser:
     dom_prepare.add_argument("source", type=Path)
     dom_prepare.add_argument("--manual", type=Path, help="人工/配置字段 JSON")
     dom_prepare.add_argument("--store", type=Path, default=Path(".m6") / "dom-bridge")
-    dom_prepare.add_argument("--profile-version", default="dom-poc-v1")
+    dom_prepare.add_argument("--profile-version", default="dom-poc-v3")
     dom_prepare.add_argument(
         "--include-complex",
         action="store_true",
-        help="仅在动态表格和人员选择器已完成 DOM Profile 校准后启用",
+        help="仅在权利人、发明人和第一发明人控件已完成 DOM Profile 校准后启用",
     )
     dom_prepare.add_argument(
         "--allow-overwrite",

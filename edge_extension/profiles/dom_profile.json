@@ -1,7 +1,7 @@
 {
   "format": "patent-dom-profile-v1",
   "id": "patent-intranet-dom",
-  "version": "dom-poc-v1",
+  "version": "dom-poc-v3",
   "page_fingerprint": {
     "required_markers": ["专利信息库", "基本信息"],
     "error_markers": ["错误页面", "页面加载中", "校验失败", "弹窗遮挡"]
@@ -40,47 +40,51 @@
     },
     "rights_holder_rows": {
       "kind": "table",
-      "labels": ["专利权人表"],
-      "selectors": ["[data-m2-id='rights_holder_rows']"],
+      "labels": ["专利权人"],
+      "selectors": ["table.je-field-childfunc"],
       "table": {
-        "row_selector": "tbody tr:not(.empty-row)",
-        "value_selector": "td:nth-child(2) input",
-        "add_selector": "[data-m2-id='rights_holder_add']",
-        "new_input_selector": "tbody tr:last-child td:nth-child(2) input"
+        "identity_selector": ".x-grid-cell-ZLQR_NAME",
+        "identity_texts": ["单位名称"],
+        "row_selector": "tr.x-grid-row",
+        "value_selector": "td.x-grid-cell-ZLQR_NAME .x-grid-cell-inner",
+        "add_selector": ".add-icon.add.fa-plus-circle",
+        "add_within_table": true,
+        "new_cell_selector": "td.x-grid-cell-ZLQR_NAME",
+        "new_input_selector": "input[name='ZLQR_NAME']"
       }
     },
     "inventor_rows": {
       "kind": "table",
       "labels": ["发明人（含第一发明人）"],
-      "selectors": ["[data-m2-id='inventor_rows']"],
+      "selectors": ["table.je-field-childfunc"],
       "table": {
-        "row_selector": "tbody tr:not(.empty-row)",
-        "value_selector": "td:nth-child(2) input",
-        "add_selector": "[data-m2-id='inventor_add']",
-        "new_input_selector": "tbody tr:last-child td:nth-child(2) input"
+        "identity_selector": ".x-grid-cell-USERNAME",
+        "identity_texts": ["姓名", "身份证号"],
+        "row_selector": "tr.x-grid-row",
+        "value_selector": "td.x-grid-cell-USERNAME .x-grid-cell-inner",
+        "add_selector": ".add-icon.add.fa-plus-circle",
+        "add_within_table": true,
+        "new_cell_selector": "td.x-grid-cell-USERNAME",
+        "new_input_selector": "input[name='USERNAME']"
       }
     },
     "first_inventor_select": {
       "kind": "person",
-      "labels": ["第一发明人"],
-      "selectors": ["[data-m2-id='first_inventor_select']"],
+      "labels": [],
+      "selectors": ["input[name='ZL_DYFMRXM']"],
       "person": {
-        "search_selector": "#person-search",
-        "result_selector": "#people-list .person",
-        "choose_selector": "[data-person]",
-        "readback_selector": "#selected-person",
-        "readback_prefix": "已选择："
+        "mode": "direct"
       }
     },
     "patentee_merge": {
       "kind": "text",
-      "labels": ["专利权人合并"],
-      "selectors": ["[data-m2-id='patentee_merge']"]
+      "labels": [],
+      "selectors": ["input[name='ZL_ZLQRHB']"]
     },
     "inventor_merge": {
       "kind": "text",
-      "labels": ["发明人合并"],
-      "selectors": ["[data-m2-id='inventor_merge']"]
+      "labels": [],
+      "selectors": ["input[name='ZL_FMRHB']"]
     }
   }
 }
