@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "专利证书安全预填",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "从本机已审核任务预填当前专利页面，始终停在人工保存之前。",
   "permissions": [
     "activeTab",

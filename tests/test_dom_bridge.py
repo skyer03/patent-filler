@@ -56,11 +56,14 @@ class DomTaskTests(unittest.TestCase):
         task = build_dom_task(draft, include_complex=True)
         fields = {item["field_id"]: item for item in task["fields"]}
 
+        self.assertEqual(task["profile_version"], "dom-poc-v3")
         self.assertEqual(fields["rights_holder_rows"]["value"], list(draft.current_patentees))
         self.assertEqual(fields["inventor_rows"]["value"], list(draft.inventors))
         self.assertEqual(fields["first_inventor_select"]["value"], draft.inventors[0])
         self.assertEqual(fields["patentee_merge"]["source"], "derived_from_reviewed_table")
-        self.assertEqual(fields["inventor_merge"]["normalizer"], "merged_list")
+        self.assertEqual(fields["patentee_merge"]["value"], ",".join(draft.current_patentees))
+        self.assertEqual(fields["inventor_merge"]["value"], ",".join(draft.inventors))
+        self.assertEqual(fields["inventor_merge"]["normalizer"], "trim")
 
     def test_service_publishes_task_without_a_bound_screen_window(self) -> None:
         draft = load_workflow_sources(GOLDEN)[0]
@@ -177,12 +180,19 @@ class EdgeExtensionPackageTests(unittest.TestCase):
         self.assertEqual(set(manifest["permissions"]), {"activeTab", "nativeMessaging", "scripting", "storage"})
         self.assertNotIn("host_permissions", manifest)
         self.assertTrue({"cookies", "history", "webRequest"}.isdisjoint(manifest["permissions"]))
-        self.assertEqual(profile["version"], "dom-poc-v1")
+        self.assertEqual(profile["version"], "dom-poc-v3")
         self.assertTrue({
             "patent_no", "application_title", "patent_type", "application_date",
             "grant_date", "joint_application", "rights_holder_rows", "inventor_rows",
             "first_inventor_select", "patentee_merge", "inventor_merge",
         }.issubset(profile["fields"]))
+        self.assertEqual(profile["fields"]["first_inventor_select"]["person"], {"mode": "direct"})
+        self.assertEqual(profile["fields"]["rights_holder_rows"]["table"]["identity_selector"], ".x-grid-cell-ZLQR_NAME")
+        self.assertEqual(profile["fields"]["inventor_rows"]["table"]["identity_selector"], ".x-grid-cell-USERNAME")
+        self.assertEqual(profile["fields"]["rights_holder_rows"]["table"]["identity_texts"], ["单位名称"])
+        self.assertEqual(profile["fields"]["inventor_rows"]["table"]["identity_texts"], ["姓名", "身份证号"])
+        self.assertEqual(profile["fields"]["patentee_merge"]["selectors"], ["input[name='ZL_ZLQRHB']"])
+        self.assertEqual(profile["fields"]["inventor_merge"]["selectors"], ["input[name='ZL_FMRHB']"])
         self.assertIn("保存", profile["blocked_action_labels"])
 
     def test_content_script_contains_no_destructive_click_path(self) -> None:
@@ -195,6 +205,25 @@ class EdgeExtensionPackageTests(unittest.TestCase):
         self.assertIn("readback_mismatch", content)
         self.assertNotIn("<all_urls>", content + worker)
         self.assertIn('$_ -ne "activeTab"', installer)
+
+    def test_hidden_extjs_table_editor_is_not_treated_as_active(self) -> None:
+        content = (ROOT / "edge_extension" / "content.js").read_text(encoding="utf-8")
+
+        self.assertIn("function elementVisible(element)", content)
+        self.assertGreaterEqual(
+            content.count("querySelectorAll(tableProfile.new_input_selector)]).filter(elementVisible)"),
+            3,
+        )
+        self.assertIn('new PointerEvent("pointerdown"', content)
+        self.assertIn('new MouseEvent("click", { ...base, buttons: 0, detail: 1 })', content)
+        self.assertIn("clickLikeUser(addButtons[0]);", content)
+        self.assertIn("const values = [...new Set(row.querySelectorAll(table.value_selector))];", content)
+        self.assertIn('new KeyboardEvent("keydown", options)', content)
+        self.assertIn("commitTableEditor(newInput);", content)
+        self.assertIn("async function overwriteExistingTableRows", content)
+        self.assertIn('throw new Error("table_overwrite_requires_delete")', content)
+        self.assertNotIn('allowOverwrite ? "overwrite_not_supported_table"', content)
+        self.assertIn("`write_failed:${field.field_id}:${errorCode}`", content)
 
 
 if __name__ == "__main__":
