@@ -286,6 +286,7 @@ class M7ToolApp(ttk.Frame):
         patent_type = {
             "invention": "发明",
             "utility_model": "实用新型",
+            "design": "外观设计",
         }.get(str(draft.patent_type or "").strip(), str(draft.patent_type or ""))
         values = {
             "patent_no": patent_no,

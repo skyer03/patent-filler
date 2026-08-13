@@ -188,6 +188,19 @@ class M7UnifiedWorkflowTests(unittest.TestCase):
 
         app.probe_value.set.assert_called_once_with(draft.title or "")
 
+    def test_probe_default_maps_design_type_to_visible_option(self) -> None:
+        draft = load_workflow_sources(GOLDEN / "001-ZL202010430096.0.json")[0]
+        draft.patent_type = "design"
+        app = M7ToolApp.__new__(M7ToolApp)
+        app.probe_control = Mock(get=lambda: "申请类型")
+        app.probe_value = Mock()
+        app.current_index = 0
+        app.drafts = [draft]
+
+        app._fill_probe_value()
+
+        app.probe_value.set.assert_called_once_with("外观设计")
+
     def test_auto_update_report_redacts_sensitive_config_values(self) -> None:
         draft = load_workflow_sources(GOLDEN / "001-ZL202010430096.0.json")[0]
         report = M7Service().run_auto_update(

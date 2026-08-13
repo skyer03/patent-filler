@@ -99,15 +99,25 @@ class CertificateParser:
 
         values: dict[str, str | None] = {
             "certificate_no": self._certificate_no(text),
-            "title": _between(text, "发明名称", "专利权人") or _between(text, "实用新型名称", "专利权人"),
+            "title": (
+                _between(text, "发明名称", "专利权人")
+                or _between(text, "实用新型名称", "专利权人")
+                or _between(text, "外观设计名称", "专利权人")
+            ),
             "patent_no_raw": _single(text, "专利号"),
             "publication_no": _single(text, "授权公告号"),
             "application_date": _single(text, "专利申请日"),
             "grant_publication_date": _single(text, "授权公告日"),
             "current_patentees": _between(text, "专利权人", "地址"),
-            "application_date_applicants": _between(text, "申请日时申请人", "申请日时发明人"),
-            "inventors": _between(text, "发明人", "专利号"),
-            "application_date_inventors": _until_text(text, "申请日时发明人", "国家知识产权局"),
+            "application_date_applicants": (
+                _between(text, "申请日时申请人", "申请日时发明人")
+                or _between(text, "申请日时申请人", "申请日时设计人")
+            ),
+            "inventors": _between(text, "发明人", "专利号") or _between(text, "设计人", "专利号"),
+            "application_date_inventors": (
+                _until_text(text, "申请日时发明人", "国家知识产权局")
+                or _until_text(text, "申请日时设计人", "国家知识产权局")
+            ),
         }
         draft.patent_type = self._patent_type(text)
         if draft.patent_type is None:
@@ -159,7 +169,9 @@ class CertificateParser:
         if method == "ocr":
             return "cnipa_scanned_ocr"
         compact = re.sub(r"\s+", "", text)
-        if page_count == 1 and ("发明专利证书" in compact or "实用新型专利证书" in compact):
+        if page_count == 1 and any(
+            title in compact for title in ("发明专利证书", "实用新型专利证书", "外观设计专利证书")
+        ):
             return "cnipa_electronic_one_page_text_layer_2024"
         if page_count == 2:
             return "cnipa_two_page_text_layer"
@@ -172,6 +184,8 @@ class CertificateParser:
             return "invention"
         if "实用新型专利证书" in compact:
             return "utility_model"
+        if "外观设计专利证书" in compact:
+            return "design"
         return None
 
     @staticmethod
